@@ -17,8 +17,8 @@
             android:id="@+id/action_signInFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
         <action
-            android:id="@+id/action_signInFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_signInFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -57,8 +57,17 @@
             app:destination="@id/signInFragment" />
     </fragment>
     <fragment
+        android:id="@+id/containerFragment"
+        android:name="com.example.nutritionapp.homePage.ContainerFragment"
+        android:label="fragment_container"
+        tools:layout="@layout/fragment_container" >
+        <action
+            android:id="@+id/action_containerFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.nutritionapp.startup.HomeFragment"
+        android:name="com.example.nutritionapp.homePage.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action

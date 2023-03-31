@@ -64,7 +64,7 @@ class SignInFragment : Fragment() {
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        navController.navigate(R.id.action_signInFragment_to_homeFragment)
+        navController.navigate(R.id.action_signInFragment_to_containerFragment)
     }
 
     public override fun onStart() {
