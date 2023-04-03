@@ -28,19 +28,6 @@ class HomeFragment : Fragment() {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        init(view)
-
-        binding.btnLogout.setOnClickListener {
-
-            Firebase.auth.signOut()
-            navController.navigate(R.id.action_homeFragment_to_signInFragment)
-
-            Toast.makeText(context, "Logout success", Toast.LENGTH_SHORT).show()
-        }
-    }
-
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         mAuth = FirebaseAuth.getInstance()
