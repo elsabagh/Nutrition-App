@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.nutritionapp.startup.SignInFragment"
+        android:name="com.example.nutritionapp.ui.startup.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -22,7 +22,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.nutritionapp.startup.SignUpFragment"
+        android:name="com.example.nutritionapp.ui.startup.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -31,7 +31,7 @@
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="com.example.nutritionapp.startup.ForgotPasswordFragment"
+        android:name="com.example.nutritionapp.ui.startup.ForgotPasswordFragment"
         android:label="fragment_forgotpassword"
         tools:layout="@layout/fragment_forgotpassword" >
         <action
@@ -40,7 +40,7 @@
     </fragment>
     <fragment
         android:id="@+id/otpVerificationFragment"
-        android:name="com.example.nutritionapp.startup.OtpVerificationFragment"
+        android:name="com.example.nutritionapp.ui.startup.OtpVerificationFragment"
         android:label="fragment_otp_verification"
         tools:layout="@layout/fragment_otp_verification" >
         <action
@@ -49,7 +49,7 @@
     </fragment>
     <fragment
         android:id="@+id/createNewPasswordFragment"
-        android:name="com.example.nutritionapp.startup.CreateNewPasswordFragment"
+        android:name="com.example.nutritionapp.ui.startup.CreateNewPasswordFragment"
         android:label="fragment_create_new_password"
         tools:layout="@layout/fragment_create_new_password" >
         <action
@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/containerFragment"
-        android:name="com.example.nutritionapp.homePage.ContainerFragment"
+        android:name="com.example.nutritionapp.ui.homePage.ContainerFragment"
         android:label="fragment_container"
         tools:layout="@layout/fragment_container" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.nutritionapp.homePage.HomeFragment"
+        android:name="com.example.nutritionapp.ui.homePage.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action

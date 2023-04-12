@@ -1,4 +1,4 @@
-package com.example.nutritionapp.startup
+package com.example.nutritionapp.ui.startup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
