@@ -17,34 +17,109 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintBottom_toTopOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#F2F5FC"
+                app:cardCornerRadius="16dp"
+                app:cardMaxElevation="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/icon_calender"
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_calendar_month_24" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#F2F5FC"
+                app:cardCornerRadius="16dp"
+                app:cardMaxElevation="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/icon_moreoption"
+                    android:layout_width="25dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_more_horiz_24" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:letterSpacing="0.01"
+                android:text="Monday"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                app:layout_constraintStart_toEndOf="@+id/cardView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <ProgressBar
             android:id="@+id/progress_bar"
             style="@style/CircularDeterminateProgressBar"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="68dp"
             android:indeterminateOnly="false"
-            android:progress="100"
+            android:progress="60"
             android:progressDrawable="@drawable/circle"
-            android:rotation="-90"
+            android:rotation="180"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.071" />
+            app:layout_constraintVertical_bias="0.01" />
 
         <TextView
             android:id="@+id/text_view_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="100%"
+            android:text="1645"
+            android:fontFamily="@font/poppins_semibold"
+            android:letterSpacing="0.01"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
-            app:layout_constraintTop_toTopOf="@+id/progress_bar"
-            tools:text="100%" />
+            app:layout_constraintTop_toTopOf="@+id/progress_bar" />
 
         <TextView
             android:id="@+id/Kcal_Goal_number"
@@ -53,7 +128,7 @@
             android:fontFamily="@font/poppins_bold"
             android:letterSpacing="0.08"
             android:text="2181"
-            android:textColor="@color/black"
+            android:textColor="#03A9F4"
             android:textSize="28sp"
             app:layout_constraintEnd_toEndOf="@+id/progress_bar"
             app:layout_constraintStart_toStartOf="@+id/progress_bar"
@@ -72,6 +147,20 @@
             app:layout_constraintEnd_toEndOf="@+id/Kcal_Goal_number"
             app:layout_constraintStart_toStartOf="@+id/Kcal_Goal_number"
             app:layout_constraintTop_toBottomOf="@+id/Kcal_Goal_number" />
+
+        <TextView
+            android:id="@+id/text_remaining"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-10dp"
+            android:fontFamily="@font/poppins_semibold"
+            android:letterSpacing="0.01"
+            android:text="remaining"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_progress"
+            app:layout_constraintStart_toStartOf="@+id/text_view_progress"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_progress" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -121,6 +210,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
 
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="102dp"
+                        android:background="#2ED12E"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
                     <TextView
                         android:id="@+id/text_breakfast"
                         android:layout_width="0dp"
@@ -130,7 +228,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:letterSpacing="0.01"
                         android:text="Breakfast"
-                        android:textColor="@color/black"
+                        android:textColor="#2ED12E"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -177,6 +275,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
 
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="102dp"
+                        android:background="#FFA935"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/text_Lunch"
                         android:layout_width="0dp"
@@ -186,7 +292,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:letterSpacing="0.01"
                         android:text="Lunch"
-                        android:textColor="@color/black"
+                        android:textColor="#FFA935"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -232,6 +338,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
 
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="102dp"
+                        android:background="#12E5B0"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/text_Dinner"
                         android:layout_width="0dp"
@@ -241,7 +355,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:letterSpacing="0.01"
                         android:text="Dinner"
-                        android:textColor="@color/black"
+                        android:textColor="#12E5B0"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -287,6 +401,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
 
+                    <View
+                        android:layout_width="13dp"
+                        android:layout_height="102dp"
+                        android:background="#B575E7"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
                     <TextView
                         android:id="@+id/text_Snacks"
                         android:layout_width="0dp"
@@ -296,7 +418,7 @@
                         android:fontFamily="@font/poppins_semibold"
                         android:letterSpacing="0.01"
                         android:text="Snacks"
-                        android:textColor="@color/black"
+                        android:textColor="#B575E7"
                         android:textSize="24sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
