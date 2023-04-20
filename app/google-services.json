@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "432147180999-r497q8fhdfqdemu7j5pf4ruhn45hh1ko.apps.googleusercontent.com",
+          "client_id": "432147180999-2mcof6cohvrvj2htb025i1qlhkh7peu6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nutritionapp",
+            "certificate_hash": "05d228b9cda9e1ad36ac7ff8c9ba9d8c527f5f17"
+          }
+        },
+        {
+          "client_id": "432147180999-mpk21gmn71spql1php3ra2j9o6rtmhva.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "432147180999-r497q8fhdfqdemu7j5pf4ruhn45hh1ko.apps.googleusercontent.com",
+              "client_id": "432147180999-mpk21gmn71spql1php3ra2j9o6rtmhva.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
