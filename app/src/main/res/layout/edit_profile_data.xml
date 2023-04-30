@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/ed_name"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:hint="name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/ed_age"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="age"
+        app:layout_constraintEnd_toEndOf="@+id/ed_name"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:layout_constraintTop_toBottomOf="@+id/ed_name" />
+
+    <EditText
+        android:id="@+id/ed_weight"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="weight"
+        app:layout_constraintEnd_toEndOf="@+id/ed_name"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:layout_constraintTop_toBottomOf="@+id/ed_age" />
+
+    <EditText
+        android:id="@+id/ed_email"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="email"
+        app:layout_constraintEnd_toEndOf="@+id/ed_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:layout_constraintTop_toBottomOf="@+id/ed_height" />
+
+    <EditText
+        android:id="@+id/ed_height"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:hint="height"
+        app:layout_constraintEnd_toEndOf="@+id/ed_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ed_name"
+        app:layout_constraintTop_toBottomOf="@+id/ed_weight" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_marginHorizontal="150dp"
+        app:layout_constraintStart_toStartOf="@+id/ed_email"
+        app:layout_constraintTop_toBottomOf="@+id/ed_email" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="150dp"
+        android:text="cancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_save"
+        app:layout_constraintEnd_toEndOf="@+id/ed_email"
+        app:layout_constraintTop_toTopOf="@+id/btn_save" />
+
+</LinearLayout>
