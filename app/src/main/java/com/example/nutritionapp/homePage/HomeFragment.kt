@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui.homePage
+package com.example.nutritionapp.homePage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,41 +10,26 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentHomeBinding
-import com.example.nutritionapp.databinding.FragmentMoreBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class MoreFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-    lateinit var binding: FragmentMoreBinding
+    private lateinit var binding: FragmentHomeBinding
     private lateinit var navController: NavController
     private lateinit var mAuth: FirebaseAuth
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        binding = FragmentMoreBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        init(view)
-
-        binding.imageIconLogout.setOnClickListener {
-
-            Firebase.auth.signOut()
-            navController.navigate(R.id.action_containerFragment_to_signInFragment)
-
-            Toast.makeText(context, "Logout success", Toast.LENGTH_SHORT).show()
-        }
-    }
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root    }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         mAuth = FirebaseAuth.getInstance()
     }
-
 }

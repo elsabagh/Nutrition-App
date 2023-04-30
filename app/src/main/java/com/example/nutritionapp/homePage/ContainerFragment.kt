@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui.homePage
+package com.example.nutritionapp.homePage
 
 import android.icu.text.Replaceable
 import android.os.Bundle

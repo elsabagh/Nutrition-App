@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui.startup
+package com.example.nutritionapp.startup
 
 import android.os.Bundle
 import android.util.Log
@@ -24,7 +24,7 @@ class ForgotPasswordFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentForgotpasswordBinding.inflate(layoutInflater)
         return binding.root

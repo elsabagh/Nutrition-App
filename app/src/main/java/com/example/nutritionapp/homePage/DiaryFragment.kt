@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui.startup
+package com.example.nutritionapp.homePage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.nutritionapp.R
 
-class OtpVerificationFragment : Fragment() {
+class DiaryFragment : Fragment() {
 
 
     override fun onCreateView(
@@ -15,7 +15,7 @@ class OtpVerificationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_otp_verification, container, false)
+        return inflater.inflate(R.layout.fragment_diary, container, false)
     }
 
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F2F5FC"
-    tools:context=".ui.homePage.HomeFragment">
+    tools:context=".homePage.HomeFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

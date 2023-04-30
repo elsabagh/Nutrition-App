@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui.startup
+package com.example.nutritionapp.startup
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,7 +10,11 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentSignUpBinding
+import com.example.nutritionapp.data.UserData
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 
 
 class SignUpFragment : Fragment() {
@@ -20,10 +24,13 @@ class SignUpFragment : Fragment() {
     private lateinit var mAuth: FirebaseAuth
     private lateinit var binding: FragmentSignUpBinding
 
+    private lateinit var database: DatabaseReference
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -55,19 +62,38 @@ class SignUpFragment : Fragment() {
         }
     }
 
+
     private fun registerUser(email: String, pass: String) {
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-            if (it.isSuccessful)
+            if (it.isSuccessful) {
+                saveDataUser()
                 navController.navigate(R.id.action_signUpFragment_to_signInFragment)
-            else
+            } else {
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
+            }
 
         }
+    }
+
+    private fun saveDataUser() {
+        val eName = binding.etName.text.toString().trim()
+        val eAge = binding.etAge.text.toString().trim()
+        val eWeight = binding.etWeight.text.toString().trim()
+        val eHeight = binding.etHeight.text.toString().trim()
+        val eEmail = binding.etEmail.text.toString().trim()
+
+        val user = UserData(eName, eAge, eWeight, eHeight, eEmail)
+
+        val userId = mAuth.currentUser!!.uid
+
+        database.child("User").child(userId).setValue(user)
+
     }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         mAuth = FirebaseAuth.getInstance()
+        database = Firebase.database.reference
     }
 
 }
