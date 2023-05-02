@@ -1,504 +1,511 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#F2F5FC"
-    tools:context=".homePage.HomeFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout3"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/items_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:background="#F2F5FC"
+        tools:context=".homePage.HomeFragment">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            app:cardBackgroundColor="#F2F5FC"
-            app:cardCornerRadius="16dp"
-            app:cardMaxElevation="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/items_background"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/icon_calender"
-                android:layout_width="25dp"
-                android:layout_height="27dp"
-                android:layout_gravity="center"
-                android:src="@drawable/baseline_calendar_month_24" />
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#F2F5FC"
+                app:cardCornerRadius="16dp"
+                app:cardMaxElevation="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView3"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            app:cardBackgroundColor="#F2F5FC"
-            app:cardCornerRadius="16dp"
-            app:cardMaxElevation="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+                <ImageView
+                    android:id="@+id/icon_calender"
+                    android:layout_width="25dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_calendar_month_24" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#F2F5FC"
+                app:cardCornerRadius="16dp"
+                app:cardMaxElevation="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/icon_moreoption"
+                    android:layout_width="25dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_more_horiz_24" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/text_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center"
+                android:letterSpacing="0.01"
+                android:text="Monday"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                app:layout_constraintStart_toEndOf="@+id/cardView2"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/items_background"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
-            <ImageView
-                android:id="@+id/icon_moreoption"
-                android:layout_width="25dp"
-                android:layout_height="24dp"
-                android:layout_gravity="center"
-                android:src="@drawable/baseline_more_horiz_24" />
-        </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/progress_bar_carb"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="86dp"
+                android:indeterminateOnly="false"
+                android:progress="60"
+                android:progressDrawable="@drawable/circle"
+                android:rotation="180"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_Protein"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:indeterminateOnly="false"
+                android:progress="60"
+                android:progressDrawable="@drawable/circle"
+                android:rotation="180"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar_carb"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar_carb"
+                app:layout_constraintTop_toBottomOf="@+id/progress_bar_carb" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_Fat"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:indeterminateOnly="false"
+                android:progress="60"
+                android:progressDrawable="@drawable/circle"
+                android:rotation="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar_Protein"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar_Protein"
+                app:layout_constraintTop_toBottomOf="@+id/progress_bar_Protein" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="32dp"
+                android:indeterminateOnly="false"
+                android:progress="60"
+                android:progressDrawable="@drawable/circle"
+                android:rotation="180"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.01" />
+
+            <TextView
+                android:id="@+id/text_view_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_semibold"
+                android:letterSpacing="0.01"
+                android:text="1645"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar"
+                app:layout_constraintTop_toTopOf="@+id/progress_bar" />
+
+            <TextView
+                android:id="@+id/Kcal_Goal_number"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:fontFamily="@font/poppins_bold"
+                android:letterSpacing="0.08"
+                android:text="2181"
+                android:textColor="#03A9F4"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar"
+                app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+            <TextView
+                android:id="@+id/Kcal_Goal_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-12dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:letterSpacing="0.01"
+                android:text="Kcal Goal"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/Kcal_Goal_number"
+                app:layout_constraintStart_toStartOf="@+id/Kcal_Goal_number"
+                app:layout_constraintTop_toBottomOf="@+id/Kcal_Goal_number" />
+
+            <TextView
+                android:id="@+id/text_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:fontFamily="@font/poppins_semibold"
+                android:letterSpacing="0.01"
+                android:text="remaining"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/text_view_progress"
+                app:layout_constraintStart_toStartOf="@+id/text_view_progress"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_progress" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
         <TextView
-            android:id="@+id/text_day"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:gravity="center"
-            android:letterSpacing="0.01"
-            android:text="Monday"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cardView3"
-            app:layout_constraintStart_toEndOf="@+id/cardView2"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/items_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
-
-        <ProgressBar
-            android:id="@+id/progress_bar_carb"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:id="@+id/Daily_meals_text"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="24dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="86dp"
-            android:indeterminateOnly="false"
-            android:progress="60"
-            android:progressDrawable="@drawable/circle"
-            android:rotation="180"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar_Protein"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="8dp"
-            android:indeterminateOnly="false"
-            android:progress="60"
-            android:progressDrawable="@drawable/circle"
-            android:rotation="180"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar_carb"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar_carb"
-            app:layout_constraintTop_toBottomOf="@+id/progress_bar_carb" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar_Fat"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:indeterminateOnly="false"
-            android:progress="60"
-            android:progressDrawable="@drawable/circle"
-            android:rotation="180"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar_Protein"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar_Protein"
-            app:layout_constraintTop_toBottomOf="@+id/progress_bar_Protein" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@style/CircularDeterminateProgressBar"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
-            android:layout_marginTop="32dp"
-            android:indeterminateOnly="false"
-            android:progress="60"
-            android:progressDrawable="@drawable/circle"
-            android:rotation="180"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.01" />
-
-        <TextView
-            android:id="@+id/text_view_progress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_semibold"
             android:letterSpacing="0.01"
-            android:text="1645"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar"
-            app:layout_constraintTop_toTopOf="@+id/progress_bar" />
-
-        <TextView
-            android:id="@+id/Kcal_Goal_number"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:fontFamily="@font/poppins_bold"
-            android:letterSpacing="0.08"
-            android:text="2181"
-            android:textColor="#03A9F4"
-            android:textSize="28sp"
-            app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-            app:layout_constraintStart_toStartOf="@+id/progress_bar"
-            app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
-
-        <TextView
-            android:id="@+id/Kcal_Goal_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-12dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:letterSpacing="0.01"
-            android:text="Kcal Goal"
+            android:text="Daily meals"
             android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/Kcal_Goal_number"
-            app:layout_constraintStart_toStartOf="@+id/Kcal_Goal_number"
-            app:layout_constraintTop_toBottomOf="@+id/Kcal_Goal_number" />
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
 
-        <TextView
-            android:id="@+id/text_remaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="-10dp"
-            android:fontFamily="@font/poppins_semibold"
-            android:letterSpacing="0.01"
-            android:text="remaining"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/text_view_progress"
-            app:layout_constraintStart_toStartOf="@+id/text_view_progress"
-            app:layout_constraintTop_toBottomOf="@+id/text_view_progress" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    <TextView
-        android:id="@+id/Daily_meals_text"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:letterSpacing="0.01"
-        android:text="Daily meals"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Daily_meals_text">
-
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
             android:layout_marginTop="8dp"
-            android:orientation="vertical">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Daily_meals_text">
 
-            <androidx.cardview.widget.CardView
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardMaxElevation="16dp">
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
 
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/breakfast"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
-
-                    <View
-                        android:layout_width="13dp"
-                        android:layout_height="102dp"
-                        android:background="#2ED12E"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardMaxElevation="16dp">
 
 
-                    <TextView
-                        android:id="@+id/text_breakfast"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:letterSpacing="0.01"
-                        android:text="Breakfast"
-                        android:textColor="#2ED12E"
-                        android:textSize="24sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/breakfast"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
 
-                    <TextView
-                        android:id="@+id/text_details_breakfast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
-                        android:letterSpacing="0.01"
-                        android:text="Recomended 447 Kcal"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="@+id/text_breakfast"
-                        app:layout_constraintTop_toBottomOf="@+id/text_breakfast" />
-
-                    <ImageView
-                        android:id="@+id/add_breakfast"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/baseline_add_circle_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <View
+                            android:layout_width="13dp"
+                            android:layout_height="102dp"
+                            android:background="#2ED12E"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
 
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/text_breakfast"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:letterSpacing="0.01"
+                            android:text="Breakfast"
+                            android:textColor="#2ED12E"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_details_breakfast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:letterSpacing="0.01"
+                            android:text="Recomended 447 Kcal"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/text_breakfast"
+                            app:layout_constraintTop_toBottomOf="@+id/text_breakfast" />
+
+                        <ImageView
+                            android:id="@+id/add_breakfast"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/baseline_add_circle_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardMaxElevation="16dp">
+                </androidx.cardview.widget.CardView>
 
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/Lunch"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
-
-                    <View
-                        android:layout_width="13dp"
-                        android:layout_height="102dp"
-                        android:background="#FFA935"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/text_Lunch"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:letterSpacing="0.01"
-                        android:text="Lunch"
-                        android:textColor="#FFA935"
-                        android:textSize="24sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/text_details_Lunch"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
-                        android:letterSpacing="0.01"
-                        android:text="Recomended 447 Kcal"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="@+id/text_Lunch"
-                        app:layout_constraintTop_toBottomOf="@+id/text_Lunch" />
-
-                    <ImageView
-                        android:id="@+id/add_Lunch"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/baseline_add_circle_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardMaxElevation="16dp">
 
 
-            </androidx.cardview.widget.CardView>
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Lunch"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <View
+                            android:layout_width="13dp"
+                            android:layout_height="102dp"
+                            android:background="#FFA935"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_Lunch"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:letterSpacing="0.01"
+                            android:text="Lunch"
+                            android:textColor="#FFA935"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/text_details_Lunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:letterSpacing="0.01"
+                            android:text="Recomended 447 Kcal"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/text_Lunch"
+                            app:layout_constraintTop_toBottomOf="@+id/text_Lunch" />
+
+                        <ImageView
+                            android:id="@+id/add_Lunch"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/baseline_add_circle_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardMaxElevation="16dp">
+                </androidx.cardview.widget.CardView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/Dinner"
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardMaxElevation="16dp">
 
-                    <View
-                        android:layout_width="13dp"
-                        android:layout_height="102dp"
-                        android:background="#12E5B0"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Dinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
 
-                    <TextView
-                        android:id="@+id/text_Dinner"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:letterSpacing="0.01"
-                        android:text="Dinner"
-                        android:textColor="#12E5B0"
-                        android:textSize="24sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:layout_width="13dp"
+                            android:layout_height="102dp"
+                            android:background="#12E5B0"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/text_details_Dinner"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
-                        android:letterSpacing="0.01"
-                        android:text="Recomended 447 Kcal"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="@+id/text_Dinner"
-                        app:layout_constraintTop_toBottomOf="@+id/text_Dinner" />
+                        <TextView
+                            android:id="@+id/text_Dinner"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:letterSpacing="0.01"
+                            android:text="Dinner"
+                            android:textColor="#12E5B0"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/add_Dinner"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/baseline_add_circle_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/text_details_Dinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:letterSpacing="0.01"
+                            android:text="Recomended 447 Kcal"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/text_Dinner"
+                            app:layout_constraintTop_toBottomOf="@+id/text_Dinner" />
+
+                        <ImageView
+                            android:id="@+id/add_Dinner"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/baseline_add_circle_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            </androidx.cardview.widget.CardView>
+                </androidx.cardview.widget.CardView>
 
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginStart="12dp"
-                android:layout_marginEnd="12dp"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="12dp"
-                app:cardMaxElevation="16dp">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/Snack"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="100dp">
+                    android:layout_height="100dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardMaxElevation="16dp">
 
-                    <View
-                        android:layout_width="13dp"
-                        android:layout_height="102dp"
-                        android:background="#B575E7"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/Snack"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
 
-                    <TextView
-                        android:id="@+id/text_Snacks"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginTop="16dp"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:letterSpacing="0.01"
-                        android:text="Snacks"
-                        android:textColor="#B575E7"
-                        android:textSize="24sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        <View
+                            android:layout_width="13dp"
+                            android:layout_height="102dp"
+                            android:background="#B575E7"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/text_details_Snack"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_medium"
-                        android:letterSpacing="0.01"
-                        android:text="Recomended 447 Kcal"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="@+id/text_Snacks"
-                        app:layout_constraintTop_toBottomOf="@+id/text_Snacks" />
+                        <TextView
+                            android:id="@+id/text_Snacks"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginTop="16dp"
+                            android:fontFamily="@font/poppins_semibold"
+                            android:letterSpacing="0.01"
+                            android:text="Snacks"
+                            android:textColor="#B575E7"
+                            android:textSize="24sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/add_Snack"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/baseline_add_circle_24"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <TextView
+                            android:id="@+id/text_details_Snack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:letterSpacing="0.01"
+                            android:text="Recomended 447 Kcal"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="@+id/text_Snacks"
+                            app:layout_constraintTop_toBottomOf="@+id/text_Snacks" />
 
-
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-
-    </ScrollView>
+                        <ImageView
+                            android:id="@+id/add_Snack"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/baseline_add_circle_24"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

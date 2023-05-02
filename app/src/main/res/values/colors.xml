@@ -8,5 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#2196F3</color>
+    <color name="green">#39C166</color>
+    <color name="Grey">#333333</color>
+    <color name="breakfast">#2ED12E</color>
+    <color name="launch">#FFA935</color>
+    <color name="Dinner">#12E5B0</color>
+    <color name="Snacks">#B575E7</color>
+    <color name="DarkGreen">#023020</color>
 
 </resources>
