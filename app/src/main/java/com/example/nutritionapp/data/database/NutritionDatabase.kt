@@ -16,18 +16,15 @@ abstract class NutritionDatabase : RoomDatabase() {
         private var INSTANCE: NutritionDatabase? = null
 
         fun getDatabase(context: Context): NutritionDatabase {
-            val tempInstance = INSTANCE
-            if(tempInstance != null){
-                return tempInstance
-            }
-            synchronized(this){
+            return INSTANCE ?: synchronized(this) {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     NutritionDatabase::class.java,
-                    "nutrition_database"
+                    "nutrition_data"
                 ).build()
                 INSTANCE = instance
-                return instance
+                instance
+
             }
         }
     }

@@ -70,6 +70,18 @@
         <action
             android:id="@+id/action_containerFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_breakFastFragment"
+            app:destination="@id/breakFastFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_snacksFragment"
+            app:destination="@id/snacksFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_launchFragment"
+            app:destination="@id/launchFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -98,4 +110,20 @@
             android:id="@+id/action_moreFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/breakFastFragment"
+        android:name="com.example.nutritionapp.meals.BreakFastFragment"
+        android:label="BreakFastFragment" />
+    <fragment
+        android:id="@+id/dinnerFragment"
+        android:name="com.example.nutritionapp.meals.DinnerFragment"
+        android:label="DinnerFragment" />
+    <fragment
+        android:id="@+id/launchFragment"
+        android:name="com.example.nutritionapp.meals.LaunchFragment"
+        android:label="LaunchFragment" />
+    <fragment
+        android:id="@+id/snacksFragment"
+        android:name="com.example.nutritionapp.meals.SnacksFragment"
+        android:label="SnacksFragment" />
 </navigation>

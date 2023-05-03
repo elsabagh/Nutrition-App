@@ -1,5 +1,6 @@
 package com.example.nutritionapp.homePage
 
+import android.app.DialogFragment
 import android.icu.text.Replaceable
 import android.os.Bundle
 import androidx.fragment.app.Fragment

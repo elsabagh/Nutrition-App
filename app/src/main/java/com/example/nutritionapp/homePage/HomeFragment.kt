@@ -26,7 +26,14 @@ class HomeFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root    }
+
+        binding.addBreakfast.setOnClickListener { Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_breakFastFragment)}
+        binding.addLunch.setOnClickListener { Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_launchFragment) }
+        binding.addDinner.setOnClickListener { Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_dinnerFragment) }
+        binding.addSnack.setOnClickListener { Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_snacksFragment) }
+
+        return binding.root
+    }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)

@@ -12,13 +12,24 @@ import kotlinx.coroutines.launch
 
 class NutritionViewModel (application: Application): AndroidViewModel(application) {
 
-    val readAllData: LiveData<List<NutritionData>>
+//    val readAllData: LiveData<List<NutritionData>>
     private val repository: NutritionRepository
+
+    val readAllDataBreakFast: LiveData<List<NutritionData>>
+    val readAllDataLunch: LiveData<List<NutritionData>>
+    val readAllDataDinner: LiveData<List<NutritionData>>
+    val readAllDataSnacks: LiveData<List<NutritionData>>
+
 
     init {
         val nutritionDao = NutritionDatabase.getDatabase(application).nutritionDao()
         repository = NutritionRepository(nutritionDao)
-        readAllData = repository.readAllData
+//        readAllData = repository.readAllData
+
+        readAllDataBreakFast = repository.readAllDataBreakFast
+        readAllDataLunch = repository.readAllDataLunch
+        readAllDataDinner = repository.readAllDataDinner
+        readAllDataSnacks = repository.readAllDataSnacks
     }
 
     fun addData(nutritionData: NutritionData){

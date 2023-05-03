@@ -14,4 +14,6 @@ data class NutritionData(
     val carbs: String,
     val fat: String,
     val protein: String,
+    val meal :String
+
 )

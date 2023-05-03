@@ -1,10 +1,12 @@
 package com.example.nutritionapp.homePage
 
+
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Bundle
+import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -16,23 +18,19 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.NutritionDataF
 import com.example.nutritionapp.data.database.data_food.NutritionData
 import com.example.nutritionapp.data.retrofit.EdamamApiClient
-import com.example.nutritionapp.databinding.FragmentDiaryBinding
+import com.example.nutritionapp.databinding.FragmentSearchBinding
 import com.example.nutritionapp.viewModel.NutritionViewModel
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DiaryFragment : Fragment() {
 
-    private lateinit var mAuth: FirebaseAuth
-    private lateinit var database: DatabaseReference
+class SearchFragment : Fragment() {
+
     private lateinit var mNutritionViewModel: NutritionViewModel
-    lateinit var binding: FragmentDiaryBinding
+    lateinit var binding: FragmentSearchBinding
     val appId = "d722b2cb"
     val appKey = "6ce10335676e71e24798fde2e86d0b90"
     val s = "Calories Remaining: 1000"
@@ -41,24 +39,21 @@ class DiaryFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentDiaryBinding.inflate(layoutInflater)
+    ): View? {
+        binding = FragmentSearchBinding.inflate(layoutInflater)
+        mNutritionViewModel = ViewModelProvider(this).get(NutritionViewModel::class.java)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        init(view)
-        CreateSpinner()
-
-//        mNutritionViewModel = ViewModelProvider(this).get(NutritionViewModel::class.java)
 
         binding.addButton.setOnClickListener {
-//            insertDataToDatabase()
-            SaveDataNutrition()
-
+            insertDataToDatabase()
         }
+
+        CreateSpinner()
 
 
         binding.connection.text = s
@@ -68,21 +63,21 @@ class DiaryFragment : Fragment() {
                 binding.connection.text = s
                 search()
             } else {
-                binding.connection.text = "Please Cheak Your Internet Connection"
-                binding.calories.text = "-"
-                binding.Protien.text = "-"
-                binding.carb.text = "-"
-                binding.fats.text = "-"
-                binding.itemname.text = "-"
+                binding.connection.text = "0"
+                binding.calories.text = "0"
+                binding.Protien.text = "0"
+                binding.carb.text = "0"
+                binding.fats.text = "0"
+                binding.itemname.text = "0"
             }
 
         }
     }
 
     fun CreateSpinner() {
-        var Meals = arrayOf("Select a Meal", "Breakfast", "Dinner", "Lunch", "Snacks")
-        binding.MySpinner.adapter =
-            ArrayAdapter<String>(requireContext(), R.layout.customspinner, Meals)
+        var Meals = arrayOf("Select a Meal","Breakfast", "Dinner", "Lunch", "Snacks")
+        binding.MySpinner.adapter=
+            ArrayAdapter<String>(requireContext(), R.layout.customspinner,Meals)
         binding.MySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener
         {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
@@ -92,51 +87,44 @@ class DiaryFragment : Fragment() {
             override fun onNothingSelected(p0: AdapterView<*>?) {
                 binding.SelectedMeal.text="Select a Meal"
             }
+
         }
     }
 
-    private fun SaveDataNutrition() {
-        val dName = binding.itemname.text.toString()
-        val dCal = binding.calories.text.toString()
-        val dCarb = binding.carb.text.toString()
-        val dFat = binding.fats.text.toString()
-        val dProtein = binding.Protien.text.toString()
-        val dSelectedMeal = binding.SelectedMeal.text.toString()
-
-        val dataNutrition = NutritionDataF(dName, dCal, dCarb, dFat, dProtein, dSelectedMeal)
-//
-//        if (dName.isEmpty()){
-//            etName.error = "name"
-//        }
-//        if (dCal.isEmpty()){
-//            etCal.error = "cal"
-//        }
-//        if (dCarb.isEmpty()){
-//            etCarb.error = "carb"
-//        }
-//        if (dFat.isEmpty()){
-//            etFat.error = "fat"
-//        }
-//        if (dProtein.isEmpty()){
-//            etProtein.error = "protein"
-//        }
-
-        database.push().setValue(dataNutrition).addOnCompleteListener {
-            if (it.isSuccessful) {
-                Toast.makeText(context, "success", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-
-            }
+    private fun insertDataToDatabase() {
+        val foodName = binding.itemname.text.toString()
+        val calories = binding.calories.text.toString()
+        val carb = binding.carb.text.toString()
+        val protein = binding.Protien.text.toString()
+        val fat = binding.fats.text.toString()
+        val meal = binding.SelectedMeal.text.toString()
+        if (calories !="0" && binding.SelectedMeal.text !="Select a Meal") {
+            binding.addButton.isEnabled = true
+            val nutrientData = NutritionData(0,foodName, "Calories:$calories kcl |","Carb:$carb g |","Fats:20 g ","Protien:$protein g |",meal)
+            mNutritionViewModel.addData(nutrientData)
+            Toast.makeText(requireContext(), "$foodName is Added", Toast.LENGTH_LONG).show()
+        }
+        else if (calories == "0")
+        {
+            Toast.makeText(requireContext(), "Nothing to Add", Toast.LENGTH_LONG).show()
+        }
+        else if (binding.SelectedMeal.text == "Select a Meal")
+        {
+            Toast.makeText(requireContext(), "Select a Meal", Toast.LENGTH_LONG).show()
+        }
+        else if (calories =="0" && binding.SelectedMeal.text =="Select a Meal")
+        {
+            Toast.makeText(requireContext(), "Nothing to Add", Toast.LENGTH_LONG).show()
         }
     }
 
 //    private fun insertDataToDatabase() {
-//        val foodName = binding.itemName.text.toString()
+//        val foodName = binding.itemname.text.toString()
 //        val calories = binding.calories.text.toString()
 //        val carb = binding.carb.text.toString()
 //        val fat = binding.fats.text.toString()
 //        val protein = binding.Protien.text.toString()
+//        val meal = binding.SelectedMeal.text.toString()
 //
 //        if (inputCheck(foodName, calories, carb, fat, protein)) {
 //            val nutrientData = NutritionData(0, foodName, calories, carb, fat, protein)
@@ -149,7 +137,7 @@ class DiaryFragment : Fragment() {
 //                .show()
 //        }
 //    }
-
+//
 //    private fun inputCheck(
 //        foodName: String,
 //        calories: String,
@@ -214,10 +202,4 @@ class DiaryFragment : Fragment() {
         }
     }
 
-    private fun init(view: View) {
-
-        mAuth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().reference.child("NutritionData")
-            .child(mAuth.currentUser?.uid.toString())
-    }
 }
