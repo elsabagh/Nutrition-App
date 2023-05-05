@@ -8,8 +8,8 @@
 
             <solid android:color="@color/black" />
 
-            <gradient android:startColor="#FFFFFF"
-                android:endColor="#FFFFFF"
+            <gradient android:startColor="@color/blue1"
+                android:endColor="@color/blue2"
                 android:angle="360"/>
         </shape>
     </item>
