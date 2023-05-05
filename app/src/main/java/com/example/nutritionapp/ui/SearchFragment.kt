@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class DiaryFragment : Fragment() {
+class SearchFragment : Fragment() {
 
     private lateinit var mAuth: FirebaseAuth
     private lateinit var database: DatabaseReference

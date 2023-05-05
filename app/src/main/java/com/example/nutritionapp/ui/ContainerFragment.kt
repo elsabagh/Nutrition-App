@@ -33,7 +33,7 @@ class ContainerFragment : Fragment() {
                     true
                 }
                 R.id.navigation_dashboard -> {
-                    replaceFragment(DiaryFragment())
+                    replaceFragment(SearchFragment())
                     true
                 }
                 R.id.navigation_result -> {

@@ -51,6 +51,9 @@ class SignUpFragment : Fragment() {
 
                     registerUser(email, pass)
 
+                    navController.navigate(R.id.action_signUpFragment_to_signInFragment)
+
+
                 } else {
                     Toast.makeText(context, "Password is not same", Toast.LENGTH_SHORT).show()
                 }
@@ -64,7 +67,6 @@ class SignUpFragment : Fragment() {
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
                 saveDataUser()
-                navController.navigate(R.id.action_signUpFragment_to_signInFragment)
             } else {
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }

@@ -75,5 +75,7 @@ class DinnerFragment : Fragment() {
         mAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference("NutritionData")
             .child(mAuth.currentUser?.uid.toString())
+        database.keepSynced(true)
+
     }
 }
