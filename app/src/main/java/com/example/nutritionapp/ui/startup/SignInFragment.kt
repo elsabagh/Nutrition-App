@@ -63,9 +63,9 @@ class SignInFragment : Fragment() {
                 Toast.makeText(context, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
         }
 
-        binding.googleLog.setOnClickListener {
-            signIn()
-        }
+//        binding.googleLog.setOnClickListener {
+//            signIn()
+//        }
 
         binding.pageForgetPass.setOnClickListener {
             navController.navigate(R.id.action_signInFragment_to_forgotPasswordFragment)

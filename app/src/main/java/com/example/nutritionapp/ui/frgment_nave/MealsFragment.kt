@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui
+package com.example.nutritionapp.ui.frgment_nave
 
 import android.os.Bundle
 import android.view.LayoutInflater

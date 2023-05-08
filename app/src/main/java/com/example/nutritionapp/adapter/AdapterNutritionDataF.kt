@@ -3,7 +3,7 @@ package com.example.nutritionapp.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.nutritionapp.model.NutritionDataF
+import com.example.nutritionapp.data.NutritionDataF
 import com.example.nutritionapp.databinding.ItemBinding
 import java.util.ArrayList
 

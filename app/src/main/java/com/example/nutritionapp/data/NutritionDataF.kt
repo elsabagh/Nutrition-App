@@ -1,4 +1,4 @@
-package com.example.nutritionapp.model
+package com.example.nutritionapp.data
 
 data class NutritionDataF(
     val foodName: String? = null,

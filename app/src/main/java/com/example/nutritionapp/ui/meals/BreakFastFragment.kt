@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionapp.adapter.AdapterNutritionDataF
-import com.example.nutritionapp.model.NutritionDataF
+import com.example.nutritionapp.data.NutritionDataF
 import com.example.nutritionapp.databinding.FragmentRecylerBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionapp.adapter.AdapterNutritionDataF
 import com.example.nutritionapp.databinding.LunchBinding
-import com.example.nutritionapp.model.NutritionDataF
+import com.example.nutritionapp.data.NutritionDataF
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError

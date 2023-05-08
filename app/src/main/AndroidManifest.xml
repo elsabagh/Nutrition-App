@@ -14,7 +14,7 @@
         android:theme="@style/Theme.NutritionApp"
         tools:targetApi="31">
     <activity
-        android:name=".ui.SplashActivity"
+        android:name=".ui.startup.SplashActivity"
         android:exported="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <intent-filter>

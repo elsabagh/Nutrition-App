@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/containerFragment"
-        android:name="com.example.nutritionapp.ui.ContainerFragment"
+        android:name="com.example.nutritionapp.ui.frgment_nave.ContainerFragment"
         android:label="fragment_container"
         tools:layout="@layout/fragment_container" >
         <action
@@ -82,19 +82,22 @@
         <action
             android:id="@+id/action_containerFragment_to_launchFragment"
             app:destination="@id/launchFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_calculateRequiredCaloriesFragment"
+            app:destination="@id/calculateRequiredCaloriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.nutritionapp.ui.HomeFragment"
+        android:name="com.example.nutritionapp.ui.frgment_nave.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            android:id="@+id/action_homeFragment_to_calculateRequiredCaloriesFragment"
+            app:destination="@id/calculateRequiredCaloriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.nutritionapp.ui.ProfileFragment"
+        android:name="com.example.nutritionapp.ui.frgment_nave.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" >
         <action
@@ -103,7 +106,7 @@
     </fragment>
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.nutritionapp.ui.MoreFragment"
+        android:name="com.example.nutritionapp.ui.frgment_nave.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" >
         <action
@@ -126,4 +129,8 @@
         android:id="@+id/snacksFragment"
         android:name="com.example.nutritionapp.ui.meals.SnacksFragment"
         android:label="SnacksFragment" />
+    <fragment
+        android:id="@+id/calculateRequiredCaloriesFragment"
+        android:name="com.example.nutritionapp.ui.calculater.CalculateRequiredCaloriesFragment"
+        android:label="CalculateRequiredCaloriesFragment" />
 </navigation>

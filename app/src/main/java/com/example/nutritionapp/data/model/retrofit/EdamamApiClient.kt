@@ -1,4 +1,4 @@
-package com.example.nutritionapp.model.retrofit
+package com.example.nutritionapp.data.model.retrofit
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

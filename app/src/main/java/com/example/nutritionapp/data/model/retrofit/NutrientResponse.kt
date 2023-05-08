@@ -1,4 +1,4 @@
-package com.example.nutritionapp.model.retrofit
+package com.example.nutritionapp.data.model.retrofit
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui
+package com.example.nutritionapp.ui.frgment_nave
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -20,13 +20,30 @@ class HomeFragment : Fragment() {
     private lateinit var navController: NavController
     private lateinit var mAuth: FirebaseAuth
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        return binding.root    }
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        buttonCalculateRequiredCaloriesFragment()
+    }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)
         mAuth = FirebaseAuth.getInstance()
+    }
+
+    private fun buttonCalculateRequiredCaloriesFragment() {
+        binding.calculateRequiredCalories.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_calculateRequiredCaloriesFragment)
+        }
     }
 }

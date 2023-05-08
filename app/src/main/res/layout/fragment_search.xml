@@ -10,367 +10,376 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_height="match_parent"
+    <ScrollView
         android:layout_width="match_parent"
-        android:background="@color/white">
+        android:layout_height="match_parent">
 
-        <!--       SEARCH BAR    -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_height="match_parent"
             android:layout_width="match_parent"
-            android:layout_height="160dp"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:cardElevation="8dp">
+            android:background="@color/white">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_height="match_parent"
+            <!--       SEARCH BAR    -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
                 android:layout_width="match_parent"
-                android:background="@drawable/custom_card_search">
+                android:layout_height="160dp"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:cardElevation="8dp">
 
-                <EditText
-                    android:id="@+id/searchbar"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_height="match_parent"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginHorizontal="8dp"
-                    android:background="@drawable/custom"
-                    android:drawableLeft="@drawable/baseline_search_24"
-                    android:padding="8dp"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="#003060"
-                    android:hint="Search for a food"
-                    android:textColor="#003060"
-                    android:textColorHint="#003060"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:background="@drawable/custom_card_search">
 
-                <TextView
-                    android:id="@+id/warnning"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:drawableRight="@drawable/baseline_info_24"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="@color/white"
-                    android:text="Enter a food in this form (1 Egg OR 100 g rice)"
-                    android:textColor="@color/white"
-                    android:textSize="16dp"
-                    android:textStyle="italic"
-                    app:layout_constraintEnd_toEndOf="@+id/searchbar"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/searchbar"
-                    app:layout_constraintTop_toBottomOf="@+id/searchbar" />
+                    <EditText
+                        android:id="@+id/searchbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:background="@drawable/custom"
+                        android:drawableLeft="@drawable/baseline_search_24"
+                        android:padding="8dp"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="#003060"
+                        android:hint="Search for a food"
+                        android:textColor="#003060"
+                        android:textColorHint="#003060"
+                        android:textSize="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/searchbut"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/custom"
-                    android:drawableRight="@drawable/baseline_fastfood_24"
-                    android:drawablePadding="8dp"
-                    android:drawableTint="#003060"
-                    android:padding="8dp"
-                    android:text="Food Details"
-                    android:textColor="#003060"
-                    android:textSize="20dp"
-                    app:layout_constraintEnd_toEndOf="@+id/warnning"
-                    app:layout_constraintHorizontal_bias="0.478"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/warnning"
-                    app:layout_constraintTop_toBottomOf="@id/warnning" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/warnning"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:drawableRight="@drawable/baseline_info_24"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/white"
+                        android:text="Enter a food in this form (1 Egg OR 100 g rice)"
+                        android:textColor="@color/white"
+                        android:textSize="16dp"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="@+id/searchbar"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/searchbar"
+                        app:layout_constraintTop_toBottomOf="@+id/searchbar" />
 
-
-        <!--  Calories Remaining     -->
-
-
-        <!-- Food Name -->
-
-        <TextView
-            android:id="@+id/connection"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:drawablePadding="8dp"
-            android:text="Calories Remaining: 1000"
-            android:textColor="#003060"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="@+id/cardview"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/cardview"
-            app:layout_constraintTop_toBottomOf="@id/cardview" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/FoodCardView"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/connection"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/connection"
-            app:layout_constraintTop_toBottomOf="@id/cardview">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue2">
-
-                <TextView
-                    android:id="@+id/foodname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Search Result"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/itemname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/foodname" />
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/searchbut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/custom"
+                        android:drawableRight="@drawable/baseline_fastfood_24"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="#003060"
+                        android:padding="8dp"
+                        android:text="Food Details"
+                        android:textColor="#003060"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="@+id/warnning"
+                        app:layout_constraintHorizontal_bias="0.478"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/warnning"
+                        app:layout_constraintTop_toBottomOf="@id/warnning" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+            <!--  Calories Remaining     -->
+
+
+            <!-- Food Name -->
+
+            <TextView
+                android:id="@+id/connection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:text="Calories Remaining: 1000"
+                android:textColor="#003060"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="@+id/cardview"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/cardview"
+                app:layout_constraintTop_toBottomOf="@id/cardview" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/FoodCardView"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/connection"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/connection"
+                app:layout_constraintTop_toBottomOf="@id/cardview">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue2">
+
+                    <TextView
+                        android:id="@+id/foodname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Search Result"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/itemname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/foodname" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
 
-        <!-- Calories -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CaloriesCardView"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/FoodCardView"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/FoodCardView"
-            app:layout_constraintTop_toBottomOf="@id/FoodCardView">
+            <!-- Calories -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CaloriesCardView"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/FoodCardView"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/FoodCardView"
+                app:layout_constraintTop_toBottomOf="@id/FoodCardView">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue4">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue4">
 
-                <TextView
-                    android:id="@+id/Caloriesname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Calories"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/Caloriesname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calories"
+                        android:textColor="@color/white"
+                        android:textSize="25sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/calories"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/Caloriesname" />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <!-- Carbohydrates -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/CarbCardView"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="12dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ProteinCardView"
-            app:layout_constraintEnd_toStartOf="@+id/ProteinCardView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/ProteinCardView">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue3">
-
-                <TextView
-                    android:id="@+id/Carbname"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Carb"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/carb"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLength="4"
-                    android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/Carbname" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/calories"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Caloriesname" />
 
 
-        <!-- Protien -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/ProteinCardView"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:layout_constraintEnd_toEndOf="@+id/CaloriesCardView"
-            app:layout_constraintLeft_toRightOf="@id/CarbCardView"
-            app:layout_constraintRight_toLeftOf="@id/FatsCardView"
-            app:layout_constraintStart_toStartOf="@+id/CaloriesCardView"
-            app:layout_constraintTop_toBottomOf="@+id/CaloriesCardView">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue2">
+            <!-- Carbohydrates -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/CarbCardView"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="12dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ProteinCardView"
+                app:layout_constraintEnd_toStartOf="@+id/ProteinCardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ProteinCardView">
 
-                <TextView
-                    android:id="@+id/ProName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Protien"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue3">
 
-                <TextView
-                    android:id="@+id/Protien"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLength="4"
-                    android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ProName" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/Carbname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carb"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/carb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="4"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/Carbname" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
 
-        <!-- Fats -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/FatsCardView"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginRight="8dp"
-            app:cardCornerRadius="20dp"
-            app:cardElevation="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ProteinCardView"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ProteinCardView"
-            app:layout_constraintTop_toTopOf="@id/ProteinCardView">
+            <!-- Protien -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ProteinCardView"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/CaloriesCardView"
+                app:layout_constraintLeft_toRightOf="@id/CarbCardView"
+                app:layout_constraintRight_toLeftOf="@id/FatsCardView"
+                app:layout_constraintStart_toStartOf="@+id/CaloriesCardView"
+                app:layout_constraintTop_toBottomOf="@+id/CaloriesCardView">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/blue1">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue2">
 
-                <TextView
-                    android:id="@+id/FatsName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fats"
-                    android:textColor="@color/white"
-                    android:textSize="25dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/ProName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Protien"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/fats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLength="4"
-                    android:text="0"
-                    android:textColor="@color/white"
-                    android:textSize="20dp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/FatsName" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/Protien"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="4"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ProName" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
-        <!-- Add Button-->
 
-        <androidx.appcompat.widget.AppCompatSpinner
-            android:id="@+id/MySpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:spinnerMode="dialog"
-            app:layout_constraintEnd_toEndOf="@+id/ProteinCardView"
-            app:layout_constraintStart_toStartOf="@+id/ProteinCardView"
-            app:layout_constraintTop_toBottomOf="@+id/ProteinCardView" />
+            <!-- Fats -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/FatsCardView"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginRight="8dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ProteinCardView"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ProteinCardView"
+                app:layout_constraintTop_toTopOf="@id/ProteinCardView">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addButton"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/btn_login_background"
-            android:text="Add Food"
-            android:textColor="@color/white"
-            android:textSize="30dp"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/SelectedMeal" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue1">
 
-        <TextView
-            android:id="@+id/SelectedMeal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/white"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/MySpinner"
-            app:layout_constraintStart_toStartOf="@+id/MySpinner"
-            app:layout_constraintTop_toBottomOf="@+id/MySpinner" />
+                    <TextView
+                        android:id="@+id/FatsName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fats"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <TextView
+                        android:id="@+id/fats"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:maxLength="4"
+                        android:text="0"
+                        android:textColor="@color/white"
+                        android:textSize="20dp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/FatsName" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Add Button-->
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/MySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:spinnerMode="dialog"
+                app:layout_constraintEnd_toEndOf="@+id/ProteinCardView"
+                app:layout_constraintStart_toStartOf="@+id/ProteinCardView"
+                app:layout_constraintTop_toBottomOf="@+id/ProteinCardView" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/addButton"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/btn_login_background"
+                android:text="Add Food"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.491"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/MySpinner" />
+
+            <TextView
+                android:id="@+id/SelectedMeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/white"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@+id/MySpinner"
+                app:layout_constraintStart_toStartOf="@+id/MySpinner"
+                app:layout_constraintTop_toBottomOf="@+id/MySpinner" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
 </layout>

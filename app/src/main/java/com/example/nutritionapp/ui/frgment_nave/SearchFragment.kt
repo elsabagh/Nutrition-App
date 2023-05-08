@@ -1,4 +1,4 @@
-package com.example.nutritionapp.ui
+package com.example.nutritionapp.ui.frgment_nave
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -15,8 +15,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import com.example.nutritionapp.R
-import com.example.nutritionapp.model.NutritionDataF
-import com.example.nutritionapp.model.retrofit.EdamamApiClient
+import com.example.nutritionapp.data.NutritionDataF
+import com.example.nutritionapp.data.model.retrofit.EdamamApiClient
 import com.example.nutritionapp.databinding.FragmentSearchBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -33,7 +33,11 @@ class SearchFragment : Fragment() {
     val appKey = "6ce10335676e71e24798fde2e86d0b90"
     val s = "Calories Remaining: 1000"
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentSearchBinding.inflate(layoutInflater)
         return binding.root
     }
@@ -44,7 +48,9 @@ class SearchFragment : Fragment() {
         init(view)
         CreateSpinner()
 
-        binding.addButton.setOnClickListener { SaveDataNutrition() }
+        binding.addButton.setOnClickListener {
+            SaveDataNutrition()
+        }
 
         binding.connection.text = s
         isInternetAvailable(activity?.applicationContext!!)
@@ -52,8 +58,7 @@ class SearchFragment : Fragment() {
             if (isInternetAvailable(activity?.applicationContext!!) == true) {
                 binding.connection.text = s
                 search()
-            }
-            else {
+            } else {
                 binding.connection.text = "Please Cheak Your Internet Connection"
                 binding.calories.text = "-"
                 binding.Protien.text = "0"
@@ -67,17 +72,16 @@ class SearchFragment : Fragment() {
 
     //Create Spinner
     fun CreateSpinner() {
-        var Meals = arrayOf("Select a Meal", "Breakfast", "Lunch","Dinner","Snacks")
+        var Meals = arrayOf("Select a Meal", "Breakfast", "Lunch", "Dinner", "Snacks")
         binding.MySpinner.adapter =
             ArrayAdapter<String>(requireContext(), R.layout.customspinner, Meals)
-        binding.MySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener
-        {
+        binding.MySpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                binding.SelectedMeal.text=binding.MySpinner.selectedItem.toString()
+                binding.SelectedMeal.text = binding.MySpinner.selectedItem.toString()
             }
 
             override fun onNothingSelected(p0: AdapterView<*>?) {
-                binding.SelectedMeal.text="Select a Meal"
+                binding.SelectedMeal.text = "Select a Meal"
             }
         }
     }
@@ -90,24 +94,21 @@ class SearchFragment : Fragment() {
         val dFat = binding.fats.text.toString()
         val dProtein = binding.Protien.text.toString()
         val dSelectedMeal = binding.SelectedMeal.text.toString()
-        if (dCal !="0" && binding.SelectedMeal.text !="Select a Meal") {
+
+        if (dCal != "0" && binding.SelectedMeal.text != "Select a Meal") {
             val dataNutrition = NutritionDataF(dName, dCal, dCarb, dFat, dProtein, dSelectedMeal)
             database.push().setValue(dataNutrition).addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(requireContext(), "$dName is Added", Toast.LENGTH_LONG).show()
                 }
             }
-        }
-        else if (dCal == "0")
-        {
+        } else if (dCal == "0") {
             Toast.makeText(requireContext(), "Nothing to Add", Toast.LENGTH_LONG).show()
-        }
-        else if (binding.SelectedMeal.text == "Select a Meal")
-        {
+
+        } else if (binding.SelectedMeal.text == "Select a Meal") {
             Toast.makeText(requireContext(), "Select a Meal", Toast.LENGTH_LONG).show()
-        }
-        else if (dCal =="0" && binding.SelectedMeal.text =="Select a Meal")
-        {
+
+        } else if (dCal == "0" && binding.SelectedMeal.text == "Select a Meal") {
             Toast.makeText(requireContext(), "Nothing to Add", Toast.LENGTH_LONG).show()
         }
     }
@@ -136,8 +137,7 @@ class SearchFragment : Fragment() {
                         binding.fats.text = fat.toString()
                         binding.itemname.text = ingredient
                     }
-                }
-                else {
+                } else {
                     binding.calories.text = "0"
                     binding.Protien.text = "0"
                     binding.carb.text = "0"

@@ -10,7 +10,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentSignUpBinding
-import com.example.nutritionapp.model.UserData
+import com.example.nutritionapp.data.UserData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
