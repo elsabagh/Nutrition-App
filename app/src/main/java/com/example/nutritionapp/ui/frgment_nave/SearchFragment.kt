@@ -96,7 +96,10 @@ class SearchFragment : Fragment() {
         val dSelectedMeal = binding.SelectedMeal.text.toString()
 
         if (dCal != "0" && binding.SelectedMeal.text != "Select a Meal") {
-            val dataNutrition = NutritionDataF(dName, dCal, dCarb, dFat, dProtein, dSelectedMeal)
+
+            val dataId = database.push().key
+
+            val dataNutrition = NutritionDataF(dataId, dName, dCal, dCarb, dFat, dProtein, dSelectedMeal)
             database.push().setValue(dataNutrition).addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(requireContext(), "$dName is Added", Toast.LENGTH_LONG).show()

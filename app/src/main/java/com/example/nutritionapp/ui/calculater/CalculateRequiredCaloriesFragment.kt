@@ -3,13 +3,17 @@ package com.example.nutritionapp.ui.calculater
 
 import android.annotation.SuppressLint
 import android.os.Build
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.view.isGone
+import androidx.fragment.app.Fragment
 import com.example.nutritionapp.R
 import com.example.nutritionapp.util.Calculations
 import com.example.nutritionapp.databinding.FragmentCalculateRequiredCaloriesBinding
-import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
 import com.example.nutritionapp.util.enum.Operation
 import com.example.nutritionapp.util.enum.StateNumber
@@ -17,14 +21,23 @@ import com.example.nutritionapp.util.extention.validityNumber
 import com.example.nutritionapp.util.istVisible
 
 
-class CalculateRequiredCaloriesFragment : BaseFragment<FragmentCalculateRequiredCaloriesBinding>()  {
+class CalculateRequiredCaloriesFragment : Fragment()  {
 
-    override fun bindingInflater(): FragmentCalculateRequiredCaloriesBinding =
-        FragmentCalculateRequiredCaloriesBinding.inflate(layoutInflater)
+    lateinit var binding : FragmentCalculateRequiredCaloriesBinding
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        // Inflate the layout for this fragment
+        binding = FragmentCalculateRequiredCaloriesBinding.inflate(inflater, container, false)
+        return binding.root
+    }
 
-//    override var visibilityCustomActionBar: Boolean = true
-//    override var visibilityBackButton: Boolean = true
-//    override fun getTitle(): String = getString(R.string.required_calories)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setUp()
+    }
 
     private val calculations = Calculations()
 
@@ -33,7 +46,7 @@ class CalculateRequiredCaloriesFragment : BaseFragment<FragmentCalculateRequired
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-    override fun setUp() {
+     fun setUp() {
         visibleResultText(false)
         initValues()
         initListener()

@@ -85,6 +85,9 @@
         <action
             android:id="@+id/action_containerFragment_to_calculateRequiredCaloriesFragment"
             app:destination="@id/calculateRequiredCaloriesFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_bestMealsFragment"
+            app:destination="@id/bestMealsFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -94,6 +97,9 @@
         <action
             android:id="@+id/action_homeFragment_to_calculateRequiredCaloriesFragment"
             app:destination="@id/calculateRequiredCaloriesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bestMealsFragment"
+            app:destination="@id/bestMealsFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
@@ -133,4 +139,8 @@
         android:id="@+id/calculateRequiredCaloriesFragment"
         android:name="com.example.nutritionapp.ui.calculater.CalculateRequiredCaloriesFragment"
         android:label="CalculateRequiredCaloriesFragment" />
+    <fragment
+        android:id="@+id/bestMealsFragment"
+        android:name="com.example.nutritionapp.ui.calculater.BestMealsFragment"
+        android:label="BestMealsFragment" />
 </navigation>
