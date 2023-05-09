@@ -2,12 +2,19 @@ package com.example.nutritionapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionapp.data.NutritionDataF
 import com.example.nutritionapp.databinding.ItemBinding
+import com.example.nutritionapp.ui.meals.BreakFastFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.Query
 import java.util.ArrayList
 
-class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDataF>) : RecyclerView.Adapter<AdapterNutritionDataF.MyViewHolder>() {
+class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDataF>) :
+    RecyclerView.Adapter<AdapterNutritionDataF.MyViewHolder>() {
 
     class MyViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -16,6 +23,8 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
         val tvCarb = binding.textCarb
         val tvFat = binding.textFat
         val tvProtein = binding.textProtein
+        val deleteBtn = binding.btnDelete
+
 
     }
 
@@ -30,6 +39,31 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
         holder.tvCarb.text = currentItem.carbs
         holder.tvFat.text = currentItem.fat
         holder.tvProtein.text = currentItem.protein
+
+
+//        holder.deleteBtn.setOnClickListener {
+//            MaterialAlertDialogBuilder(holder.itemView.context)
+//                .setTitle("Delete item")
+//                .setMessage("Are you sure")
+//                .setPositiveButton("Yes") { _, _ ->
+//                    val ref = FirebaseDatabase.getInstance().getReference("NutritionData")
+//                        .child(FirebaseAuth.getInstance().currentUser?.uid.toString()).orderByChild("dataId")
+//                    ref.removeValue()
+//                        .addOnSuccessListener {
+//                            Toast.makeText(holder.itemView.context, "removed", Toast.LENGTH_SHORT)
+//                                .show()
+//                        }
+//                        .addOnFailureListener { error ->
+//                            Toast.makeText(holder.itemView.context, "error", Toast.LENGTH_SHORT)
+//                                .show()
+//                        }
+//                }
+//                .setNegativeButton("No") { _, _ ->
+//                    Toast.makeText(holder.itemView.context, "cancel", Toast.LENGTH_SHORT)
+//                        .show()
+//                }
+//                .show()
+//        }
     }
 
     override fun getItemCount(): Int {
