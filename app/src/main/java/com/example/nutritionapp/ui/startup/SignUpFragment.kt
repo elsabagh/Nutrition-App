@@ -51,9 +51,6 @@ class SignUpFragment : Fragment() {
 
                     registerUser(email, pass)
 
-                    navController.navigate(R.id.action_signUpFragment_to_signInFragment)
-
-
                 } else {
                     Toast.makeText(context, "Password is not same", Toast.LENGTH_SHORT).show()
                 }
@@ -66,7 +63,9 @@ class SignUpFragment : Fragment() {
     private fun registerUser(email: String, pass: String) {
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
-                saveDataUser()
+
+                navController.navigate(R.id.action_signUpFragment_to_onBoardingFragment)
+
             } else {
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
             }
@@ -74,20 +73,6 @@ class SignUpFragment : Fragment() {
         }
     }
 
-    private fun saveDataUser() {
-        val eName = binding.etName.text.toString().trim()
-        val eAge = binding.etAge.text.toString().trim()
-        val eWeight = binding.etWeight.text.toString().trim()
-        val eHeight = binding.etHeight.text.toString().trim()
-        val eEmail = binding.etEmail.text.toString().trim()
-
-        val user = UserData(eName, eAge, eWeight, eHeight, eEmail)
-
-        val userId = mAuth.currentUser!!.uid
-
-        database.child("User").child(userId).setValue(user)
-
-    }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)

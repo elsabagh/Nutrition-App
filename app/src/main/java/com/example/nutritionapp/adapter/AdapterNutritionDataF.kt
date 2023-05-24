@@ -23,6 +23,7 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
         val tvCarb = binding.textCarb
         val tvFat = binding.textFat
         val tvProtein = binding.textProtein
+        val tvDateTime = binding.textDate
         val deleteBtn = binding.btnDelete
 
 
@@ -39,6 +40,7 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
         holder.tvCarb.text = currentItem.carbs
         holder.tvFat.text = currentItem.fat
         holder.tvProtein.text = currentItem.protein
+        holder.tvDateTime.text = currentItem.timestamp
 
 
 //        holder.deleteBtn.setOnClickListener {

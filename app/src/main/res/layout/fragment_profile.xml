@@ -10,26 +10,74 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.frgment_nave.ProfileFragment">
+        tools:context=".ui.ProfileFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="@drawable/custom_card_search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/akaya_telivigala"
+                android:gravity="center"
+                android:hint="Ahmed"
+                android:drawablePadding="20dp"
+                android:drawableRight="@drawable/baseline_waving_hand_24"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="105dp"
+                android:layout_height="82dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/text_name"
+                app:layout_constraintStart_toStartOf="@+id/text_name"
+                app:layout_constraintTop_toBottomOf="@+id/text_name"
+                app:srcCompat="@drawable/diet" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/e_name"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="149dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="32dp"
-            android:text="name"
+            android:fontFamily="@font/akaya_telivigala"
+            android:hint="name"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout5" />
 
         <TextView
             android:id="@+id/e_age"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="16dp"
-            android:text="age"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="age"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/e_name"
             app:layout_constraintStart_toStartOf="@+id/e_name"
             app:layout_constraintTop_toBottomOf="@+id/e_name" />
@@ -37,9 +85,12 @@
         <TextView
             android:id="@+id/e_weight"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="16dp"
-            android:text="weight"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="weight"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/e_name"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="@+id/e_name"
@@ -48,9 +99,12 @@
         <TextView
             android:id="@+id/e_email"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="16dp"
-            android:text="email"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/akaya_telivigala"
+            android:hint="email"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/e_name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/e_name"
@@ -59,22 +113,36 @@
         <TextView
             android:id="@+id/e_height"
             android:layout_width="0dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="16dp"
-            android:text="height"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="height"
+            android:textColor="@color/black"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="@+id/e_name"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/e_name"
             app:layout_constraintTop_toBottomOf="@+id/e_weight" />
 
-        <Button
+
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Edit"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/btn_login_background"
+            android:drawableLeft="@drawable/baseline_edit_24"
+            android:drawablePadding="16dp"
+            android:hint="Edit"
+            android:letterSpacing=".15"
+            android:padding="8dp"
+            android:paddingEnd="16dp"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="@+id/e_email"
+            app:layout_constraintStart_toStartOf="@+id/e_email"
             app:layout_constraintTop_toBottomOf="@+id/e_email" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -50,6 +50,7 @@ class LaunchFragment : Fragment() {
         dataNutrientList = arrayListOf()
         mAdapterNutritionData = AdapterNutritionDataF(dataNutrientList)
 
+
         var query: Query = database.orderByKey()
         query = database.orderByChild("meal").startAt("Lunch").endAt("Lunch")
         query.addValueEventListener(object : ValueEventListener {
@@ -58,6 +59,9 @@ class LaunchFragment : Fragment() {
                     for (dataSnapShot in snapshot.children) {
                         val dataNutrition = dataSnapShot.getValue(NutritionDataF::class.java)
                         dataNutrientList.add(dataNutrition!!)
+                        dataNutrientList.sortByDescending {
+                            it.timestamp
+                        }
                     }
                     recyclerView.adapter = AdapterNutritionDataF(dataNutrientList)
                 }

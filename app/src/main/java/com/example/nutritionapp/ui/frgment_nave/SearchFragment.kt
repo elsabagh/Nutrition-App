@@ -21,8 +21,13 @@ import com.example.nutritionapp.databinding.FragmentSearchBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class SearchFragment : Fragment() {
 
@@ -31,7 +36,7 @@ class SearchFragment : Fragment() {
     lateinit var binding: FragmentSearchBinding
     val appId = "d722b2cb"
     val appKey = "6ce10335676e71e24798fde2e86d0b90"
-    val s = "Calories Remaining: 1000"
+    val s = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,14 +50,14 @@ class SearchFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        init(view)
+//        init(view)
         CreateSpinner()
 
         binding.addButton.setOnClickListener {
             SaveDataNutrition()
+            remaining()
         }
 
-        binding.connection.text = s
         isInternetAvailable(activity?.applicationContext!!)
         binding.searchbut.setOnClickListener {
             if (isInternetAvailable(activity?.applicationContext!!) == true) {
@@ -94,12 +99,23 @@ class SearchFragment : Fragment() {
         val dFat = binding.fats.text.toString()
         val dProtein = binding.Protien.text.toString()
         val dSelectedMeal = binding.SelectedMeal.text.toString()
+        val sdf = SimpleDateFormat("dd/MM/yyyy - HH:mm:ss", Locale.getDefault())
+        val currentDateAndTime = sdf.format(Date())
 
         if (dCal != "0" && binding.SelectedMeal.text != "Select a Meal") {
 
-            val dataId = database.push().key
-
-            val dataNutrition = NutritionDataF(dataId, dName, dCal, dCarb, dFat, dProtein, dSelectedMeal)
+            val dataNutrition = NutritionDataF(
+                dName,
+                dCal,
+                dCarb,
+                dFat,
+                dProtein,
+                dSelectedMeal,
+                currentDateAndTime
+            )
+            mAuth = FirebaseAuth.getInstance()
+            database = FirebaseDatabase.getInstance().reference.child("NutritionData")
+                .child(mAuth.currentUser?.uid.toString())
             database.push().setValue(dataNutrition).addOnCompleteListener {
                 if (it.isSuccessful) {
                     Toast.makeText(requireContext(), "$dName is Added", Toast.LENGTH_LONG).show()
@@ -167,11 +183,59 @@ class SearchFragment : Fragment() {
         }
     }
 
-    // Initialize Firebase
-    private fun init(view: View) {
+    fun remaining() {
+        database = Firebase.database.reference
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        database.child("User").child(userId).get().addOnSuccessListener {
 
-        mAuth = FirebaseAuth.getInstance()
-        database = FirebaseDatabase.getInstance().reference.child("NutritionData")
-            .child(mAuth.currentUser?.uid.toString())
+            val cal = it.child("reCal").value.toString()
+            val pro = it.child("rePro").value.toString()
+            val carb = it.child("reCarb").value.toString()
+            val fats = it.child("reFats").value.toString()
+
+
+            val Acalories = binding.calories.text.toString()
+            val Aprotien = binding.Protien.text.toString()
+            val Acarb = binding.carb.text.toString()
+            val Afats = binding.fats.text.toString()
+
+            val reCal = cal.toDouble() - Acalories.toDouble()
+            val rePro = pro.toDouble() - Aprotien.toDouble()
+            val reCarb = carb.toDouble() - Acarb.toDouble()
+            val reFats = fats.toDouble() - Afats.toDouble()
+
+            if (binding.SelectedMeal.text != "Select a Meal") {
+
+                val editMap = mapOf<String, Any?>(
+                    "reCal" to reCal.toString(),
+                    "rePro" to rePro.toString(),
+                    "reCarb" to reCarb.toString(),
+                    "reFats" to reFats.toString()
+                )
+
+                val userId = FirebaseAuth.getInstance().currentUser!!.uid
+                database.child("User").child(userId).updateChildren(editMap)
+
+            }
+        }
+
     }
+
+    private fun dataLoad() {
+        database = Firebase.database.reference
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        database.child("User").child(userId).get().addOnSuccessListener {
+            val recal = it.child("reCal").value.toString()
+            binding.connection.text = "Calories Remaining: ${recal}"
+        }
+    }
+
+
+    // Initialize Firebase
+//    private fun init(view: View) {
+//
+//        mAuth = FirebaseAuth.getInstance()
+//        database = FirebaseDatabase.getInstance().reference.child("NutritionData")
+//            .child(mAuth.currentUser?.uid.toString())
+//    }
 }

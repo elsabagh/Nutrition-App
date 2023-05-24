@@ -19,79 +19,90 @@
             android:layout_width="match_parent"
             android:background="@color/white">
 
-            <!--       SEARCH BAR    -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardview"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout_cardview"
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:cardElevation="8dp">
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_height="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardview"
                     android:layout_width="match_parent"
-                    android:background="@drawable/custom_card_search">
+                    android:layout_height="165dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-                    <EditText
-                        android:id="@+id/searchbar"
+                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginHorizontal="8dp"
-                        android:background="@drawable/custom"
-                        android:drawableLeft="@drawable/baseline_search_24"
-                        android:padding="8dp"
-                        android:drawablePadding="8dp"
-                        android:drawableTint="#003060"
-                        android:hint="Search for a food"
-                        android:textColor="#003060"
-                        android:textColorHint="#003060"
-                        android:textSize="20dp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="match_parent"
+                        android:background="@drawable/custom_card_search">
 
-                    <TextView
-                        android:id="@+id/warnning"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:drawableRight="@drawable/baseline_info_24"
-                        android:drawablePadding="8dp"
-                        android:drawableTint="@color/white"
-                        android:text="Enter a food in this form (1 Egg OR 100 g rice)"
-                        android:textColor="@color/white"
-                        android:textSize="16dp"
-                        android:textStyle="italic"
-                        app:layout_constraintEnd_toEndOf="@+id/searchbar"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/searchbar"
-                        app:layout_constraintTop_toBottomOf="@+id/searchbar" />
+                        <EditText
+                            android:id="@+id/searchbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginHorizontal="8dp"
+                            android:layout_marginTop="16dp"
+                            android:background="@drawable/custom"
+                            android:drawableLeft="@drawable/baseline_search_24"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="#003060"
+                            android:hint="Search for a food"
+                            android:padding="8dp"
+                            android:textColor="#003060"
+                            android:textColorHint="#003060"
+                            android:textSize="20dp"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/searchbut"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:background="@drawable/custom"
-                        android:drawableRight="@drawable/baseline_fastfood_24"
-                        android:drawablePadding="8dp"
-                        android:drawableTint="#003060"
-                        android:padding="8dp"
-                        android:text="Food Details"
-                        android:textColor="#003060"
-                        android:textSize="20dp"
-                        app:layout_constraintEnd_toEndOf="@+id/warnning"
-                        app:layout_constraintHorizontal_bias="0.478"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/warnning"
-                        app:layout_constraintTop_toBottomOf="@id/warnning" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/warnning"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableRight="@drawable/baseline_info_24"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="@color/white"
+                            android:text="Enter a food in this form (1 Egg OR 100 g rice)"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="italic"
+                            app:layout_constraintEnd_toEndOf="@+id/searchbar"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/searchbar"
+                            app:layout_constraintTop_toBottomOf="@+id/searchbar" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/searchbut"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:background="@drawable/custom"
+                            android:drawableRight="@drawable/baseline_fastfood_24"
+                            android:drawablePadding="8dp"
+                            android:drawableTint="#003060"
+                            android:padding="8dp"
+                            android:text="Food Details"
+                            android:textColor="#003060"
+                            android:textSize="20dp"
+                            app:layout_constraintEnd_toEndOf="@+id/warnning"
+                            app:layout_constraintHorizontal_bias="0.478"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/warnning"
+                            app:layout_constraintTop_toBottomOf="@id/warnning" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--       SEARCH BAR    -->
 
 
             <!--  Calories Remaining     -->
@@ -105,14 +116,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:drawablePadding="8dp"
-                android:text="Calories Remaining: 1000"
+                android:text=""
                 android:textColor="#003060"
                 android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="@+id/cardview"
+                app:layout_constraintEnd_toEndOf="@+id/layout_cardview"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/cardview"
-                app:layout_constraintTop_toBottomOf="@id/cardview" />
+                app:layout_constraintStart_toStartOf="@+id/layout_cardview"
+                app:layout_constraintTop_toBottomOf="@id/layout_cardview" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/FoodCardView"
@@ -125,7 +136,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/connection"
-                app:layout_constraintTop_toBottomOf="@id/cardview">
+                app:layout_constraintTop_toBottomOf="@id/layout_cardview">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -329,7 +340,7 @@
                         android:id="@+id/fats"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:maxLength="4"
+                        android:maxLength="3"
                         android:text="0"
                         android:textColor="@color/white"
                         android:textSize="20dp"

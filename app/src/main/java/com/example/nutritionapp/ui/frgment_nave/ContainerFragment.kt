@@ -5,14 +5,22 @@ import android.os.Parcelable
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.data.local.LocalStorage
@@ -23,6 +31,8 @@ import com.example.nutritionapp.util.istVisible
 import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.util.parsers.CSVParserHealthAdvice
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import java.io.InputStreamReader
 
 class ContainerFragment : Fragment() {
@@ -47,12 +57,14 @@ class ContainerFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentContainerBinding.inflate(inflater, container, false)
+        setHasOptionsMenu(true)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = Navigation.findNavController(view)
         val localStorage = LocalStorage(requireContext())
         localStorage.put<String>(Constants.Data.LocalStorage.MY_DATA, "Hello from local storage")
 
@@ -135,4 +147,22 @@ class ContainerFragment : Fragment() {
         Log.v("XDD", inputStream.toString())
         return InputStreamReader(inputStream)
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.actionbarmenu, menu)
+    }
+
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.logout -> {
+                Firebase.auth.signOut()
+                navController.navigate(R.id.action_containerFragment_to_signInFragment)
+                Toast.makeText(context, "Logout success", Toast.LENGTH_SHORT).show()
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

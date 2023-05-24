@@ -16,11 +16,16 @@ import com.example.nutritionapp.ui.calculater.BestMealsFragment
 import com.example.nutritionapp.util.Constants
 import com.example.nutritionapp.util.enum.StateNavigation
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import java.util.Calendar
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var navController: NavController
+    private lateinit var database: DatabaseReference
     private lateinit var mAuth: FirebaseAuth
     private var mealDataManager: Parcelable = MealDataManager()
     private lateinit var mealList: MutableList<Meal>
@@ -38,6 +43,8 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        dataLoad()
 
         buttonCardDiabetics()
         buttonCardGym()
@@ -112,6 +119,54 @@ class HomeFragment : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_containerFragment_to_calculateRequiredCaloriesFragment)
         }
     }
+
+    private fun dataLoad(){
+        database = Firebase.database.reference
+        val userId = FirebaseAuth.getInstance().currentUser!!.uid
+        database.child("User").child(userId).get().addOnSuccessListener {
+
+            val name = it.child("name").value.toString()
+            val cal = it.child("calories").value.toString()
+            val pro = it.child("protien").value.toString()
+            val fats = it.child("fats").value.toString()
+            val carb = it.child("carb").value.toString()
+
+            binding.username.text="Welcome ${name} !"
+            binding.dailyCalories.text="Your Daily Calories: ${cal} KCL"
+            binding.CarbIntake.text="Your Daily Carb Intake: ${carb} grams"
+            binding.protienIntake.text="Your Daily Protein Intake: ${pro} grams"
+            binding.FatsIntake.text="Your Daily Fats Intake: ${fats} grams"
+
+
+//            val currentTime = System.currentTimeMillis()
+//            val endOfDay = getEndOfDay().timeInMillis
+//            if (currentTime > endOfDay) {
+//
+//                val editMap = mapOf<String, Any?>(
+//                    "reCal" to cal.toString(),
+//                    "rePro" to pro.toString(),
+//                    "reCarb" to fats.toString(),
+//                    "reFats" to carb.toString()
+//                )
+//
+//                val userId = FirebaseAuth.getInstance().currentUser!!.uid
+//                database.child("User").child(userId).updateChildren(editMap)
+//            }
+
+
+            database.keepSynced(true)
+
+        }
+    }
+
+//    fun getEndOfDay(): Calendar {
+//        val calendar = Calendar.getInstance()
+//        calendar.set(Calendar.HOUR_OF_DAY, calendar.getActualMaximum(Calendar.HOUR_OF_DAY))
+//        calendar.set(Calendar.MINUTE, calendar.getActualMaximum(Calendar.MINUTE))
+//        calendar.set(Calendar.SECOND, calendar.getActualMaximum(Calendar.SECOND))
+//        calendar.set(Calendar.MILLISECOND, calendar.getActualMaximum(Calendar.MILLISECOND))
+//        return calendar
+//    }
 
     private fun init(view: View) {
         navController = Navigation.findNavController(view)

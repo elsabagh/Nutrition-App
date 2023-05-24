@@ -66,7 +66,7 @@
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/card_background_secondary">
+                        android:background="@color/blue1">
 
                         <TextView
                             android:id="@+id/resultCalculateRequiredCalories"
@@ -77,7 +77,7 @@
                             android:gravity="center"
                             android:paddingVertical="@dimen/spacing_very_small"
                             android:text=""
-                            android:textColor="@color/primary_color"
+                            android:textColor="@color/blue2"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -176,7 +176,7 @@
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/spacing_small"
                     android:text=""
-                    android:textColor="@color/primary_color"
+                    android:textColor="@color/blue2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/plus_button_weight"
                     app:layout_constraintStart_toEndOf="@+id/min_button_weight"
@@ -270,7 +270,7 @@
                     android:gravity="center_vertical"
                     android:paddingHorizontal="@dimen/spacing_small"
                     android:text=""
-                    android:textColor="@color/primary_color"
+                    android:textColor="@color/blue2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/plus_button_height"
                     app:layout_constraintStart_toEndOf="@+id/min_button_height"
@@ -365,7 +365,7 @@
                     android:gravity="center"
                     android:paddingHorizontal="@dimen/spacing_small"
                     android:text=""
-                    android:textColor="@color/primary_color"
+                    android:textColor="@color/blue2"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/plus_button_age"
                     app:layout_constraintStart_toEndOf="@+id/min_button_age"
@@ -424,7 +424,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
                         android:text="@string/male"
-                        android:textColor="@color/primary_color"
+                        android:textColor="@color/blue2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -477,7 +477,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_medium"
                         android:text="@string/female"
-                        android:textColor="@color/primary_color"
+                        android:textColor="@color/blue2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -491,14 +491,13 @@
 
         </LinearLayout>
 
-        <com.google.android.material.button.MaterialButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_calculate_required_calories"
-            style="@style/DefaultButton"
             android:layout_width="match_parent"
             android:layout_height="@dimen/special_height"
             android:layout_marginHorizontal="@dimen/spacing_medium"
             android:layout_marginBottom="@dimen/spacing_extra_large"
-            android:backgroundTint="@color/primary_color"
+            android:background="@drawable/btn_login_background"
             android:text="@string/get_your_required_calories"
             android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"

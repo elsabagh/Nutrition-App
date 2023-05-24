@@ -28,6 +28,9 @@
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_signUpFragment_to_onBoardingFragment"
+            app:destination="@id/onBoardingFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
@@ -143,4 +146,15 @@
         android:id="@+id/bestMealsFragment"
         android:name="com.example.nutritionapp.ui.calculater.BestMealsFragment"
         android:label="BestMealsFragment" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.onboarding.OnBoardingFragment"
+        android:label="OnBoardingFragment" >
+        <action
+            android:id="@+id/action_onBoardingFragment_to_containerFragment"
+            app:destination="@id/containerFragment" />
+        <action
+            android:id="@+id/action_onBoardingFragment_to_signInFragment"
+            app:destination="@id/signInFragment" />
+    </fragment>
 </navigation>

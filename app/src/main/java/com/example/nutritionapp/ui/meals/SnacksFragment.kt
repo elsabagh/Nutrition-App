@@ -57,6 +57,9 @@ class SnacksFragment : Fragment() {
                     for (dataSnapShot in snapshot.children) {
                         val dataNutrition = dataSnapShot.getValue(NutritionDataF::class.java)
                         dataNutrientList.add(dataNutrition!!)
+                        dataNutrientList.sortByDescending {
+                            it.timestamp
+                        }
                     }
                     recyclerView.adapter = AdapterNutritionDataF(dataNutrientList)
                 }

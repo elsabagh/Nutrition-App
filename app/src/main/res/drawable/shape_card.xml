@@ -5,4 +5,10 @@
     <corners
         android:radius="@dimen/radius_medium"   >
     </corners>
+
+    <gradient
+        android:startColor="#68BBE3"
+        android:centerColor="#0E86D4"
+        android:endColor="#055C9D"
+        android:type="linear" />
 </shape>

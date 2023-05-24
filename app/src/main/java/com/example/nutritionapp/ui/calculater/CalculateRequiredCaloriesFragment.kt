@@ -46,7 +46,7 @@ class CalculateRequiredCaloriesFragment : Fragment()  {
 
 
     @RequiresApi(Build.VERSION_CODES.M)
-     fun setUp() {
+    fun setUp() {
         visibleResultText(false)
         initValues()
         initListener()
@@ -110,7 +110,7 @@ class CalculateRequiredCaloriesFragment : Fragment()  {
         binding.cardMale.setOnClickListener{
             gender = Constants.KeyValues.MALE
             binding.imageMale.setBackgroundResource(R.drawable.ic_gender_male_selected)
-            genderSelectedColor(R.color.primary_color,R.color.white,R.color.white,R.color.primary_color)
+            genderSelectedColor(R.color.blue2,R.color.white,R.color.white,R.color.blue2)
 
         }
 
@@ -118,7 +118,7 @@ class CalculateRequiredCaloriesFragment : Fragment()  {
             gender = Constants.KeyValues.FEMALE
             binding.imageFemale.setBackgroundResource(R.drawable.ic_gender_female_selected)
             binding.imageFemale.isGone
-            genderSelectedColor(R.color.white,R.color.primary_color,R.color.primary_color,R.color.white)
+            genderSelectedColor(R.color.white,R.color.blue2,R.color.blue2,R.color.white)
 
         }
 
@@ -126,9 +126,9 @@ class CalculateRequiredCaloriesFragment : Fragment()  {
     @RequiresApi(Build.VERSION_CODES.M)
     private fun genderSelectedColor(
         onSelectedMaleCardColor:Int = R.color.white,
-        onSelectedMaleTextColor:Int = R.color.primary_color,
+        onSelectedMaleTextColor:Int = R.color.blue2,
         onSelectedFeMaleCardColor:Int = R.color.white,
-        onSelectedFeMaleTextColor:Int = R.color.primary_color){
+        onSelectedFeMaleTextColor:Int = R.color.blue2){
         binding.apply {
             cardFemale.setCardBackgroundColor(requireContext().getColor(onSelectedFeMaleCardColor))
             textFemale.setTextColor(requireContext().getColor(onSelectedFeMaleTextColor))
@@ -242,10 +242,10 @@ class CalculateRequiredCaloriesFragment : Fragment()  {
         if(visibilityResult){
             textLabel = R.string.get_your_required_calories
             color = R.color.white
-            backgroundColor = R.color.primary_color
+            backgroundColor = R.color.blue2
         }else{
             textLabel = R.string.reset_your_inputs
-            color = R.color.primary_color
+            color = R.color.blue2
             backgroundColor = R.color.white
         }
 

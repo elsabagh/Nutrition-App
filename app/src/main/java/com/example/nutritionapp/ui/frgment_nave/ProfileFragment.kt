@@ -36,6 +36,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val tName = binding.textName
         val eName = binding.eName
         val eAge = binding.eAge
         val eWeight = binding.eWeight
@@ -108,12 +109,14 @@ class ProfileFragment : Fragment() {
 
         database.child("User").child(userId).get().addOnSuccessListener {
 
+            val tname = it.child("name").value.toString()
             val name = it.child("name").value.toString()
             val age = it.child("age").value.toString()
             val weight = it.child("weight").value.toString()
             val height = it.child("height").value.toString()
             val email = it.child("email").value.toString()
 
+            tName.text = tname
             eName.text = name
             eAge.text = age
             eWeight.text = weight

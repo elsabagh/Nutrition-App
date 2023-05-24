@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionapp.adapter.AdapterNutritionDataF
 import com.example.nutritionapp.data.NutritionDataF
-import com.example.nutritionapp.databinding.FragmentRecylerBinding
+import com.example.nutritionapp.databinding.FragmentBreakfastBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -23,7 +23,7 @@ import java.util.ArrayList
 
 class BreakFastFragment : Fragment() {
 
-    lateinit var binding : FragmentRecylerBinding
+    lateinit var binding : FragmentBreakfastBinding
     private lateinit var dataNutrientList: ArrayList<NutritionDataF>
     private lateinit var mAuth: FirebaseAuth
     private lateinit var database: DatabaseReference
@@ -32,7 +32,7 @@ class BreakFastFragment : Fragment() {
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentRecylerBinding.inflate(layoutInflater)
+        binding = FragmentBreakfastBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -57,6 +57,9 @@ class BreakFastFragment : Fragment() {
                     for (dataSnapShot in snapshot.children) {
                         val dataNutrition = dataSnapShot.getValue(NutritionDataF::class.java)
                         dataNutrientList.add(dataNutrition!!)
+                        dataNutrientList.sortByDescending {
+                            it.timestamp
+                        }
                     }
                     recyclerView.adapter = AdapterNutritionDataF(dataNutrientList)
                 }

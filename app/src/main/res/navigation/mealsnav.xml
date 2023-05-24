@@ -30,7 +30,7 @@
         android:id="@+id/breakFastFragment2"
         android:name="com.example.nutritionapp.ui.meals.BreakFastFragment"
         android:label="BreakFastFragment"
-        tools:layout="@layout/fragment_recyler"/>
+        tools:layout="@layout/fragment_breakfast"/>
     <fragment
         android:id="@+id/dinnerFragment2"
         android:name="com.example.nutritionapp.ui.meals.DinnerFragment"

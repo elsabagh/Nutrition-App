@@ -63,6 +63,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="32dp"
                 android:hint="Email"
+                app:endIconMode="clear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/text_log">
@@ -81,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:hint="Password"
-                android:inputType="textPassword"
+                app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="@+id/input_email"
                 app:layout_constraintStart_toStartOf="@+id/input_email"
                 app:layout_constraintTop_toBottomOf="@+id/input_email">
@@ -89,7 +90,8 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_pass"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -183,10 +185,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="60dp"
+                android:fontFamily="@font/poppins_regular"
                 android:text="Create Account"
                 android:textColor="#F79515"
                 android:textSize="14sp"
-                android:fontFamily="@font/poppins_regular"
                 app:layout_constraintBottom_toBottomOf="@+id/text_not_acc"
                 app:layout_constraintStart_toEndOf="@+id/text_not_acc"
                 app:layout_constraintTop_toTopOf="@+id/text_not_acc" />
