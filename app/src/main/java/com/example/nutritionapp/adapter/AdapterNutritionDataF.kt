@@ -24,7 +24,7 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
         val tvFat = binding.textFat
         val tvProtein = binding.textProtein
         val tvDateTime = binding.textDate
-        val deleteBtn = binding.btnDelete
+//        val deleteBtn = binding.btnDelete
 
 
     }
@@ -49,7 +49,7 @@ class AdapterNutritionDataF(private val nutritionDataList: ArrayList<NutritionDa
 //                .setMessage("Are you sure")
 //                .setPositiveButton("Yes") { _, _ ->
 //                    val ref = FirebaseDatabase.getInstance().getReference("NutritionData")
-//                        .child(FirebaseAuth.getInstance().currentUser?.uid.toString()).orderByChild("dataId")
+//                        .child(FirebaseAuth.getInstance().currentUser?.uid.toString())
 //                    ref.removeValue()
 //                        .addOnSuccessListener {
 //                            Toast.makeText(holder.itemView.context, "removed", Toast.LENGTH_SHORT)

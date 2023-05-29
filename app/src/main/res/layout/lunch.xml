@@ -34,5 +34,19 @@
             android:layout_marginTop="50dp"
             android:layout_marginBottom="57dp"/>
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back"
+            android:layout_width="45dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="585dp"
+            android:background="@drawable/custom_back_btnback"
+            android:drawableStart="@drawable/baseline_arrow_back_24"
+            android:drawablePadding="16dp"
+            android:padding="8dp"
+            android:paddingEnd="16dp"
+            android:textColor="#FFFFFF"
+            android:textSize="20dp"
+            android:layout_marginStart="24dp"/>
+
     </FrameLayout>
 </layout>

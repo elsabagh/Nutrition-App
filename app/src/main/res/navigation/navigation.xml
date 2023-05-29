@@ -68,11 +68,10 @@
             android:id="@+id/action_containerFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
         <action
-            android:id="@+id/action_containerFragment_to_moreFragment"
-            app:destination="@id/moreFragment" />
-        <action
             android:id="@+id/action_containerFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/mealsnav"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_containerFragment_to_breakFastFragment"
             app:destination="@id/breakFastFragment" />
@@ -91,6 +90,9 @@
         <action
             android:id="@+id/action_containerFragment_to_bestMealsFragment"
             app:destination="@id/bestMealsFragment" />
+        <action
+            android:id="@+id/action_containerFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -103,25 +105,20 @@
         <action
             android:id="@+id/action_homeFragment_to_bestMealsFragment"
             app:destination="@id/bestMealsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.nutritionapp.ui.frgment_nave.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_moreFragment"
-            app:destination="@id/moreFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/moreFragment"
-        android:name="com.example.nutritionapp.ui.frgment_nave.MoreFragment"
-        android:label="fragment_more"
-        tools:layout="@layout/fragment_more" >
-        <action
-            android:id="@+id/action_moreFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/breakFastFragment"
         android:name="com.example.nutritionapp.ui.meals.BreakFastFragment"
@@ -156,5 +153,29 @@
         <action
             android:id="@+id/action_onBoardingFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.example.nutritionapp.ui.calculater.MealDetailsFragment"
+        android:label="MealDetailsFragment" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.nutritionapp.ui.frgment_nave.SearchFragment"
+        android:label="SearchFragment" >
+        <action
+            android:id="@+id/action_searchFragment_to_mealsFragment2"
+            app:destination="@id/mealsFragment2"
+            app:popUpTo="@id/searchFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealsFragment2"
+        android:name="com.example.nutritionapp.ui.frgment_nave.MealsFragment"
+        android:label="MealsFragment" >
+        <action
+            android:id="@+id/action_mealsFragment2_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/mealsFragment2"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

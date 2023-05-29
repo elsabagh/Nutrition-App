@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nutritionapp.R
 import com.example.nutritionapp.adapter.AdapterNutritionDataF
-import com.example.nutritionapp.databinding.LunchBinding
 import com.example.nutritionapp.data.NutritionDataF
+import com.example.nutritionapp.databinding.LunchBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -19,7 +20,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.Query
 import com.google.firebase.database.ValueEventListener
-import java.util.ArrayList
 
 class LaunchFragment : Fragment() {
 
@@ -41,8 +41,12 @@ class LaunchFragment : Fragment() {
 
         init(view)
 
-        val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.btnBack.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_launchFragment2_to_resultFragment)
+        }
+
+//        val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
+//        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         recyclerView = binding.RecLunch
         recyclerView.layoutManager = LinearLayoutManager(context)

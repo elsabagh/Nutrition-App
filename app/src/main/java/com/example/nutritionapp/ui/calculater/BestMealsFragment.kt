@@ -40,6 +40,8 @@ class BestMealsFragment :Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setUp()
 
+
+
     }
 
     private fun changeNavigation(state: StateNavigation, to: Fragment) {

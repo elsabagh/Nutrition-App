@@ -1,15 +1,14 @@
 package com.example.nutritionapp.ui.frgment_nave
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.nutritionapp.R
-import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.databinding.FragmentMoreBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth

@@ -5,9 +5,6 @@ import com.example.nutritionapp.data.model.Meal
 
 class Calculations {
 
-    fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) =
-        if (mealGrams <= 0 || caloriesOf100g <= 0) 0.0 else (mealGrams / 100.0) * caloriesOf100g
-
     fun calculatePersonDataCalories(
         gender: Char,
         weight: Double,
@@ -24,23 +21,6 @@ class Calculations {
             else -> 0.0
         }
 
-    }
-
-    fun getMealListByMealSubName(mealSubName: String, mealList: List<Meal>): List<Meal> {
-        val mealListStarsWithSubName =
-            mealList.filter { it.name.lowercase().startsWith(mealSubName.lowercase()) }
-        val mealListContainsSubName = mealList.filter {
-            it.name.lowercase().contains(mealSubName.lowercase()) && !it.name.lowercase()
-                .startsWith(mealSubName.lowercase())
-        }
-        return mealListStarsWithSubName + mealListContainsSubName
-    }
-
-    fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
-        mealList.forEach {
-            if (it.name == mealName) return it
-        }
-        return null
     }
 
     fun diabeticsBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
@@ -77,17 +57,5 @@ class Calculations {
         return mealsList.take(top)
     }
 
-    fun getRandomAdvice(healthAdviceList: MutableList<HealthAdvice>): HealthAdvice {
-        val randomIndex = (0 until healthAdviceList.size).random()
-        return healthAdviceList[randomIndex]
-    }
-
-    fun sortCalories(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.calories }
-    fun sortTotalFat(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.totalFat }
-    fun sortFiber(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.fiber }
-    fun sortSugars(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sugars }
-    fun sortProtein(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.protein }
-    fun sortVitaminD(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.vitaminD }
-    fun sortCarbohydrate(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.carbohydrate }
 
 }

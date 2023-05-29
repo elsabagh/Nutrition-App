@@ -12,27 +12,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.data.local.LocalStorage
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentContainerBinding
 import com.example.nutritionapp.util.Constants
-import com.example.nutritionapp.util.istVisible
 import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.util.parsers.CSVParserHealthAdvice
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
 import java.io.InputStreamReader
 
 class ContainerFragment : Fragment() {
@@ -49,12 +43,11 @@ class ContainerFragment : Fragment() {
 
     private lateinit var navController: NavController
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentContainerBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
@@ -110,8 +103,8 @@ class ContainerFragment : Fragment() {
                     true
                 }
 
-                R.id.navigation_more -> {
-                    replaceFragment(MoreFragment())
+                R.id.navigation_profile -> {
+                    replaceFragment(ProfileFragment())
                     true
                 }
 

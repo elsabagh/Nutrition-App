@@ -1,6 +1,8 @@
 package com.example.nutritionapp.ui.startup
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +29,11 @@ class SignUpFragment : Fragment() {
     private lateinit var database: DatabaseReference
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
         return binding.root
@@ -36,6 +42,35 @@ class SignUpFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         init(view)
+
+        binding.etPass.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val minLength = 8 // Set the minimum length to 8
+                if (s?.length ?: 0 < minLength) {
+                    binding.inputPassReg.error = "Minimum length is 8" // Display an error message
+                } else {
+                    binding.inputPassReg.error = null // Clear the error message
+                }
+            }
+        })
+
+        binding.etConfPass.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+            override fun afterTextChanged(s: Editable?) {
+                val minLength = 8 // Set the minimum length to 8
+                if (s?.length ?: 0 < minLength) {
+                    binding.inputConfPassReg.error =
+                        "Minimum length is 8" // Display an error message
+                } else {
+                    binding.inputConfPassReg.error = null // Clear the error message
+                }
+            }
+        })
 
         binding.textLog.setOnClickListener {
             navController.navigate(R.id.action_signUpFragment_to_signInFragment)
@@ -47,15 +82,20 @@ class SignUpFragment : Fragment() {
             val verifyPass = binding.etConfPass.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty() && verifyPass.isNotEmpty()) {
-                if (pass == verifyPass) {
+                if (pass.length >= 8 && verifyPass.length >= 8) {
+                    if (pass == verifyPass) {
 
-                    registerUser(email, pass)
+                        registerUser(email, pass)
 
+                    } else {
+                        Toast.makeText(context, "Password is not same", Toast.LENGTH_SHORT).show()
+                    }
                 } else {
-                    Toast.makeText(context, "Password is not same", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, "Password should be at least 8 characters long", Toast.LENGTH_SHORT).show()
                 }
-            } else
+            } else {
                 Toast.makeText(context, "Empty fields are not allowed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -63,7 +103,7 @@ class SignUpFragment : Fragment() {
     private fun registerUser(email: String, pass: String) {
         mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
             if (it.isSuccessful) {
-
+                saveDataUser()
                 navController.navigate(R.id.action_signUpFragment_to_onBoardingFragment)
 
             } else {
@@ -71,6 +111,18 @@ class SignUpFragment : Fragment() {
             }
 
         }
+    }
+
+    private fun saveDataUser() {
+
+        val eEmail = binding.etEmail.text.toString().trim()
+
+        val user = UserData(eEmail)
+
+        val userId = mAuth.currentUser!!.uid
+
+        database.child("User").child(userId).setValue(user)
+
     }
 
 

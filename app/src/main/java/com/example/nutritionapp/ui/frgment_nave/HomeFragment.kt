@@ -8,18 +8,20 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.transition.AutoTransition
+import androidx.transition.TransitionManager
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.calculater.BestMealsFragment
-import com.example.nutritionapp.util.Constants
+import com.example.nutritionapp.util.*
 import com.example.nutritionapp.util.enum.StateNavigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import java.util.Calendar
+
 
 class HomeFragment : Fragment() {
 
@@ -51,6 +53,18 @@ class HomeFragment : Fragment() {
         buttonCardPressure()
         buttonCardWeightLoss()
         buttonCalculateRequiredCaloriesFragment()
+
+        binding.arrowButton.setOnClickListener { view ->
+            if (binding.hiddenView.getVisibility() === View.VISIBLE) {
+                TransitionManager.beginDelayedTransition(binding.cardview, AutoTransition())
+                binding.hiddenView.setVisibility(View.GONE)
+                binding.arrowButton.setImageResource(R.drawable.baseline_expand_more_24)
+            } else {
+                TransitionManager.beginDelayedTransition(binding.cardview, AutoTransition())
+                binding.hiddenView.setVisibility(View.VISIBLE)
+                binding.arrowButton.setImageResource(R.drawable.baseline_expand_less_24)
+            }
+        }
 
     }
     override fun onStart() {

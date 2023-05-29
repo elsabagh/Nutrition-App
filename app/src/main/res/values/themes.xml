@@ -173,7 +173,7 @@
         <item name="android:insetTop">@dimen/zero</item>
         <item name="android:insetBottom">@dimen/zero</item>
         <item name="android:padding">@dimen/zero</item>
-        <item name="iconTint">@color/primary_color</item>
+        <item name="iconTint">@color/blue2</item>
     </style>
 
     <style name="DefaultButton" parent="CircleButton">

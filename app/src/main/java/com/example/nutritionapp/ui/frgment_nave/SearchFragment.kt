@@ -64,7 +64,7 @@ class SearchFragment : Fragment() {
                 binding.connection.text = s
                 search()
             } else {
-                binding.connection.text = "Please Cheak Your Internet Connection"
+                binding.connection.text = "Please Check Your Internet Connection!"
                 binding.calories.text = "-"
                 binding.Protien.text = "0"
                 binding.carb.text = "0"
@@ -231,11 +231,4 @@ class SearchFragment : Fragment() {
     }
 
 
-    // Initialize Firebase
-//    private fun init(view: View) {
-//
-//        mAuth = FirebaseAuth.getInstance()
-//        database = FirebaseDatabase.getInstance().reference.child("NutritionData")
-//            .child(mAuth.currentUser?.uid.toString())
-//    }
 }

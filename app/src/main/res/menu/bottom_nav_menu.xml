@@ -16,9 +16,9 @@
         android:enabled="true"
         android:title="Result" />
     <item
-        android:id="@+id/navigation_more"
-        android:icon="@drawable/baseline_menu_24"
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/baseline_account_circle_24"
         android:enabled="true"
-        android:title="More" />
+        android:title="Profile" />
 
 </menu>

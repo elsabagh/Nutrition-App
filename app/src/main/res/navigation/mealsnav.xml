@@ -12,38 +12,62 @@
         tools:layout="@layout/fragment_result">
         <action
             android:id="@+id/action_resultFragment_to_breakFastFragment2"
-            app:destination="@id/breakFastFragment2" />
+            app:destination="@id/breakFastFragment2"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_resultFragment_to_dinnerFragment2"
-            app:destination="@id/dinnerFragment2" />
+            app:destination="@id/dinnerFragment2"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_resultFragment_to_launchFragment2"
             app:destination="@id/launchFragment2" />
         <action
             android:id="@+id/action_resultFragment_to_snacksFragment2"
-            app:destination="@id/snacksFragment2" />
+            app:destination="@id/snacksFragment2"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_resultFragment_to_launchFragment22"
-            app:destination="@id/launchFragment2" />
+            app:destination="@id/launchFragment2"
+            app:popUpTo="@id/resultFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/breakFastFragment2"
         android:name="com.example.nutritionapp.ui.meals.BreakFastFragment"
         android:label="BreakFastFragment"
-        tools:layout="@layout/fragment_breakfast"/>
+        tools:layout="@layout/fragment_breakfast">
+        <action
+            android:id="@+id/action_breakFastFragment2_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dinnerFragment2"
         android:name="com.example.nutritionapp.ui.meals.DinnerFragment"
         android:label="DinnerFragment"
-        tools:layout="@layout/dinner"/>
+        tools:layout="@layout/dinner">
+        <action
+            android:id="@+id/action_dinnerFragment2_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/launchFragment2"
         android:name="com.example.nutritionapp.ui.meals.LaunchFragment"
         android:label="LaunchFragment"
-        tools:layout="@layout/lunch"/>
+        tools:layout="@layout/lunch">
+        <action
+            android:id="@+id/action_launchFragment2_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
     <fragment
         android:id="@+id/snacksFragment2"
         android:name="com.example.nutritionapp.ui.meals.SnacksFragment"
         android:label="SnacksFragment"
-        tools:layout="@layout/snacks"/>
+        tools:layout="@layout/snacks">
+        <action
+            android:id="@+id/action_snacksFragment2_to_resultFragment"
+            app:destination="@id/resultFragment" />
+    </fragment>
 </navigation>

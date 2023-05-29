@@ -13,12 +13,13 @@
         android:background="@color/background_color">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="24dp"
             android:background="@drawable/bagraoundshap"
-            android:paddingBottom="24dp"
             android:elevation="4dp"
+            android:paddingBottom="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -26,15 +27,15 @@
             <TextView
                 android:id="@+id/text_meal_name"
                 android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_marginHorizontal="16dp"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:maxLines="4"
                 android:text="French Fries"
                 android:textColor="@color/normal_text"
-                android:layout_marginTop="24dp"
                 android:textSize="16sp"
-                android:maxLines="4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

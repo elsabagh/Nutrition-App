@@ -5,10 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.nutritionapp.R
 import com.example.nutritionapp.adapter.AdapterNutritionDataF
 import com.example.nutritionapp.data.NutritionDataF
 import com.example.nutritionapp.databinding.SnacksBinding
@@ -40,8 +41,12 @@ class SnacksFragment : Fragment() {
 
         init(view)
 
-        val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
-        actionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.btnBack.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_snacksFragment2_to_resultFragment)
+        }
+
+//        val actionBar = (requireActivity() as AppCompatActivity).supportActionBar
+//        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         recyclerView = binding.RecSnacks
         recyclerView.layoutManager = LinearLayoutManager(context)
